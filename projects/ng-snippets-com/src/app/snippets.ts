@@ -1,6 +1,7 @@
 export const snippets = [
-  'hey',
-  'ho',
-  'lets',
-  'go'
+  'fallback-image-directive',
+  'join-pipe',
+  'truncate-pipe',
+  'counter-service',
+  'click-outside-directive'
 ]
