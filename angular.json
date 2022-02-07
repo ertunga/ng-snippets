@@ -31,6 +31,15 @@
             "tsConfig": "projects/ng-snippets/tsconfig.spec.json",
             "karmaConfig": "projects/ng-snippets/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-snippets/src/**/*.ts",
+              "projects/ng-snippets/src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -134,9 +143,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-snippets-com/src/**/*.ts",
+              "projects/ng-snippets-com/src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "ng-snippets-com"
+  "defaultProject": "ng-snippets-com",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

@@ -1,14 +1,13 @@
-import {Component} from '@angular/core';
-import {snippets} from "../snippets";
+import { Component } from '@angular/core';
+import { snippets } from '../snippets';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+	snippets = snippets;
 
-  snippets = snippets;
-
-  constructor() { }
+	constructor() {}
 }
