@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SnippetComponent } from './snippet/snippet.component';
 import {HttpClientModule} from "@angular/common/http";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SnippetComponent
+    SnippetComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
