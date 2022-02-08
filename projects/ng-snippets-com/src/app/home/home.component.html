@@ -1,2 +1,20 @@
-<p>navbar</p>
+<header class="backdrop-filter backdrop-blur-lg border-b border-gray-200">
+    <div class="container">
+        <a (click)="closeMenuAndNavigate('/')">
+            <img src="../assets/ng-snippets-logo.svg" class="logo" alt="Ng Snippets logo">
+            <span>Ng Snippets</span>
+        </a>
+
+        <div class="flex">
+            <a href="https://github.com/ertunga/ng-snippets" class="px-2" target="_blank">
+                <img src="./assets/github-logo.svg" alt="Github logo" class="w-6 h-6">
+            </a>
+
+            <button (click)="toggleMenu()" class="menu-button">
+                x or menu
+            </button>
+        </div>
+    </div>
+</header>
+
 <a *ngFor="let snippet of snippets" [routerLink]="'/snippet/' + snippet">{{snippet}}</a>
