@@ -3,7 +3,27 @@
 <code-block-with-header fileName="test.pipe.ts">
     <pre>
         <code>
-            test test
+import &#123;Directive, ElementRef, HostListener, Input} from '@angular/core';
+
+@Directive(&#123;
+    selector: 'img[fallbackImage]'
+})
+export class FallbackImageDirective &#123;
+
+    @Input() fallbackImage!: string;
+
+    constructor(private elementRef: ElementRef) &#123; }
+
+    @HostListener('error')
+    setFallbackImage(): void &#123;
+        if (!this.fallbackImage) &#123;
+            throw new Error('fallbackImage directive requires a value. Example: &lt;img src="https://broken-link-that-doesnt-work" fallbackImage="./assets/placeholder.svg" alt="...">');
+        }
+
+        const imageElement = this.elementRef.nativeElement as HTMLImageElement;
+        imageElement.src = this.fallbackImage;
+    }
+}
         </code>
     </pre>
 </code-block-with-header>
