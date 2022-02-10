@@ -5,8 +5,7 @@
       "files": ["projects/**/*.ts"],
       "parserOptions": {
         "project": [
-          "tsconfig.app.json",
-          "tsconfig.spec.json",
+          "tsconfig.json",
           "e2e/tsconfig.json"
         ],
         "createDefaultProgram": true
