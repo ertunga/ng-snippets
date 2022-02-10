@@ -1,3 +1,3 @@
 <p>snippet works!</p>
 
-<article class="prose max-w-6xl m-auto" *ngIf="content" [innerHTML]="content | markdown | trust"></article>
+<article *ngIf="content" [innerHTML]="content | markdown | trust" class="prose max-w-6xl m-auto"></article>

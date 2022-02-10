@@ -1,5 +1,12 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+// Tailwind
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
 
+// Highlight
 @import '~highlight.js/styles/base16/tomorrow-night.css';
+
+pre code.hljs {
+	display: inline-block;
+	padding: 0;
+}
