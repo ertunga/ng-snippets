@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EMPTY, pipe } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { SnippetService } from '../snippet.service';
+import { HighlightJS } from 'ngx-highlightjs';
 
 @Component({
 	selector: 'app-snippet',
@@ -12,12 +13,11 @@ import { SnippetService } from '../snippet.service';
 export class SnippetComponent implements AfterViewInit {
 	content: string | undefined;
 
-	@ViewChild('article') private article: ElementRef | undefined;
-
 	constructor(
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
 		private snippetService: SnippetService,
+		private highlightJS: HighlightJS,
 	) {}
 
 	ngAfterViewInit(): void {
@@ -35,9 +35,8 @@ export class SnippetComponent implements AfterViewInit {
 						),
 					)
 					.subscribe((content) => {
-						if (this.article) {
-							this.article.nativeElement.innerHTML = content;
-						}
+						this.content = content;
+						this.highlightJS.highlightAll().subscribe();
 					});
 			});
 	}

@@ -1,7 +1,7 @@
-import {Component, Inject} from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { snippets } from '../snippets';
-import {DOCUMENT} from "@angular/common";
-import {Router} from "@angular/router";
+import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-home',
@@ -9,13 +9,12 @@ import {Router} from "@angular/router";
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-
 	snippets = snippets;
 	isOpened = false;
 
 	constructor(
 		@Inject(DOCUMENT) private document: Document,
-		private router: Router
+		private router: Router,
 	) {}
 
 	toggleMenu(): void {

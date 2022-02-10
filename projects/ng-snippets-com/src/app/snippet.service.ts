@@ -8,8 +8,8 @@ import { tap } from 'rxjs/operators';
 	providedIn: 'root',
 })
 export class SnippetService {
-	private readonly prefix = '/assets/snippets/';
-	private readonly extension = '.html';
+	private readonly prefix = '/assets/markdown/';
+	private readonly extension = '.md';
 
 	constructor(private httpClient: HttpClient) {}
 
