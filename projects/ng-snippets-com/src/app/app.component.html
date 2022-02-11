@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<div>
+    <aside id="sidenav-open">
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Preferences</a>
+            <a href="#">Archive</a>
+        </nav>
+
+        <a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu" onchange="history.go(-1)"></a>
+    </aside>
+
+    <main>
+        <header>
+            <a href="#sidenav-open" id="sidenav-button" class="hamburger" title="Open Menu" aria-label="Open Menu">
+                <svg viewBox="0 0 50 40" role="presentation" focusable="false" aria-label="trigram for heaven symbol">
+                    <line x1="0" x2="100%" y1="10%" y2="10%" />
+                    <line x1="0" x2="100%" y1="50%" y2="50%" />
+                    <line x1="0" x2="100%" y1="90%" y2="90%" />
+                </svg>
+            </a>
+            <h1>Site Title</h1>
+        </header>
+
+        <article>
+            <router-outlet></router-outlet>
+        </article>
+    </main>
+</div>

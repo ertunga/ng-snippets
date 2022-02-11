@@ -7,24 +7,24 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: HomeComponent,
+		component: HomeComponent
 	},
 	{
 		path: 'snippet/:slug',
-		component: SnippetComponent,
+		component: SnippetComponent
 	},
 	{
 		path: '404',
-		component: NotFoundComponent,
+		component: NotFoundComponent
 	},
 	{
 		path: '**',
-		redirectTo: '404',
-	},
+		redirectTo: '404'
+	}
 ];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule],
+	exports: [RouterModule]
 })
 export class AppRoutingModule {}

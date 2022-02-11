@@ -8,7 +8,7 @@ import { HighlightJS } from 'ngx-highlightjs';
 @Component({
 	selector: 'app-snippet',
 	templateUrl: './snippet.component.html',
-	styleUrls: ['./snippet.component.scss'],
+	styleUrls: ['./snippet.component.scss']
 })
 export class SnippetComponent implements AfterViewInit {
 	content: string | undefined;
@@ -17,27 +17,25 @@ export class SnippetComponent implements AfterViewInit {
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
 		private snippetService: SnippetService,
-		private highlightJS: HighlightJS,
+		private highlightJS: HighlightJS
 	) {}
 
 	ngAfterViewInit(): void {
-		this.activatedRoute.params
-			.pipe(map((params) => params['slug']))
-			.subscribe((slug) => {
-				this.snippetService
-					.get(slug)
-					.pipe(
-						pipe(
-							catchError(() => {
-								this.router.navigateByUrl('404');
-								return EMPTY;
-							}),
-						),
+		this.activatedRoute.params.pipe(map((params) => params['slug'])).subscribe((slug) => {
+			this.snippetService
+				.get(slug)
+				.pipe(
+					pipe(
+						catchError(() => {
+							this.router.navigateByUrl('404');
+							return EMPTY;
+						})
 					)
-					.subscribe((content) => {
-						this.content = content;
-						this.highlightJS.highlightAll().subscribe();
-					});
-			});
+				)
+				.subscribe((content) => {
+					this.content = content;
+					this.highlightJS.highlightAll().subscribe();
+				});
+		});
 	}
 }

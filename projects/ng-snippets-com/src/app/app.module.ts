@@ -13,33 +13,20 @@ import { TrustPipe } from './trust.pipe';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		HomeComponent,
-		SnippetComponent,
-		NotFoundComponent,
-		MarkdownPipe,
-		TrustPipe,
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		HttpClientModule,
-		HighlightModule,
-	],
+	declarations: [AppComponent, HomeComponent, SnippetComponent, NotFoundComponent, MarkdownPipe, TrustPipe],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, HighlightModule],
 	providers: [
 		{
 			provide: HIGHLIGHT_OPTIONS,
 			useValue: {
 				coreLibraryLoader: () => import('highlight.js/lib/core'),
 				languages: {
-					typescript: () =>
-						import('highlight.js/lib/languages/typescript'),
-					xml: () => import('highlight.js/lib/languages/xml'),
-				},
-			},
-		},
+					typescript: () => import('highlight.js/lib/languages/typescript'),
+					xml: () => import('highlight.js/lib/languages/xml')
+				}
+			}
+		}
 	],
-	bootstrap: [AppComponent],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}

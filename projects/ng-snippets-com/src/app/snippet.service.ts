@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
 @Injectable({
-	providedIn: 'root',
+	providedIn: 'root'
 })
 export class SnippetService {
 	private readonly prefix = '/assets/snippets/';
@@ -13,11 +13,8 @@ export class SnippetService {
 	constructor(private httpClient: HttpClient) {}
 
 	get(slug: string): Observable<any> {
-		return this.httpClient.get(
-			environment.baseURL + this.prefix + slug + this.extension,
-			{
-				responseType: 'text',
-			},
-		);
+		return this.httpClient.get(environment.baseURL + this.prefix + slug + this.extension, {
+			responseType: 'text'
+		});
 	}
 }

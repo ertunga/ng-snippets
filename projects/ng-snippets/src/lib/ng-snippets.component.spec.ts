@@ -8,7 +8,7 @@ describe('NgSnippetsComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [NgSnippetsComponent],
+			declarations: [NgSnippetsComponent]
 		}).compileComponents();
 	});
 

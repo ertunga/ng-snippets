@@ -1,8 +1,7 @@
-# Click Outside Directive
+# Fallback Image Directive
 
-A directive that can detect clicks outside of the HTML element it is attached to. 
-`clickOutside` event emitter will emit the `Event` for each click. 
-You can pass it as a parameter for your method or completely omit it.
+Use this directive with any img element to prevent broken images caused by external URLs that doesn't work or exist. 
+You can provide a fallback image from the assets folder, or you can provide any URL.
 
 <code-block-with-header fileName="fallback-image.directive.ts">
 
@@ -34,11 +33,14 @@ export class FallbackImageDirective {
 
 ## Usage
 
-One common scenario would be detecting clicks outside of a drawer or a dropdown in order to close them.
+fallbackImage directive can only be used on img elements. You can pass an image from the assets folder or provide any URL.
+
+<code-block-with-header>
 
 ```html
-<div (clickOutside)="close($event)" class="dropdown">
-    Dropdown Content
-</div>
+<img src="https://broken-link-that-doesnt-work" fallbackImage="./assets/placeholder.jpeg" alt="Alt text here">
+<img src="https://broken-link-that-doesnt-work" fallbackImage="https://via.placeholder.com/150" alt="Alt text here">
 ```
+
+</code-block-with-header>
 

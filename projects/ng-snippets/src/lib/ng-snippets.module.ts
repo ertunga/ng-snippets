@@ -4,6 +4,6 @@ import { NgSnippetsComponent } from './ng-snippets.component';
 @NgModule({
 	declarations: [NgSnippetsComponent],
 	imports: [],
-	exports: [NgSnippetsComponent],
+	exports: [NgSnippetsComponent]
 })
 export class NgSnippetsModule {}

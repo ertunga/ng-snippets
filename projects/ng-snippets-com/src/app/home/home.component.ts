@@ -6,16 +6,13 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.scss'],
+	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
 	snippets = snippets;
 	isOpened = false;
 
-	constructor(
-		@Inject(DOCUMENT) private document: Document,
-		private router: Router,
-	) {}
+	constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
 
 	toggleMenu(): void {
 		this.isOpened ? this.closeMenu() : this.openMenu();

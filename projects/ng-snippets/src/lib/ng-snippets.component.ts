@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	selector: 'lib-ng-snippets',
 	template: ` <p>ng-snippets works!</p> `,
-	styles: [],
+	styles: []
 })
 export class NgSnippetsComponent implements OnInit {
 	constructor() {}
