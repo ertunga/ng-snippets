@@ -12,9 +12,12 @@ export class CodeBlockWithHeaderComponent {
 
   constructor() { }
 
-  copy(): void {
-    console.log('copy yo');
-    console.log(this.codeElementRef?.nativeElement.querySelector('pre code').innerText);
+  copyToClipboard(): void {
+    const code = this.codeElementRef?.nativeElement.querySelector('pre code')?.innerText;
+
+    if (code) {
+      navigator.clipboard.writeText(code);
+    }
   }
 }
 

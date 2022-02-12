@@ -3,7 +3,7 @@
 Use this directive with any img element to prevent broken images caused by external URLs that doesn't work or exist. 
 You can provide a fallback image from the assets folder, or you can provide any URL.
 
-<ng-code-block-with-header fileName="fallback-image.directive.ts">
+<ng-code-block-with-header file-name="fallback-image.directive.ts">
 
 ```typescript
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
