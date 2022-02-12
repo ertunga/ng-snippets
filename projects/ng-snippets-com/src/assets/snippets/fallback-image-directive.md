@@ -3,7 +3,7 @@
 Use this directive with any img element to prevent broken images caused by external URLs that doesn't work or exist. 
 You can provide a fallback image from the assets folder, or you can provide any URL.
 
-<code-block-with-header fileName="fallback-image.directive.ts">
+<ng-code-block-with-header fileName="fallback-image.directive.ts">
 
 ```typescript
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
@@ -29,18 +29,17 @@ export class FallbackImageDirective {
 }
 ```
 
-</code-block-with-header>
+</ng-code-block-with-header>
 
 ## Usage
 
 fallbackImage directive can only be used on img elements. You can pass an image from the assets folder or provide any URL.
 
-<code-block-with-header>
+<ng-code-block-with-header>
 
 ```html
 <img src="https://broken-link-that-doesnt-work" fallbackImage="./assets/placeholder.jpeg" alt="Alt text here">
 <img src="https://broken-link-that-doesnt-work" fallbackImage="https://via.placeholder.com/150" alt="Alt text here">
 ```
 
-</code-block-with-header>
-
+</ng-code-block-with-header>
