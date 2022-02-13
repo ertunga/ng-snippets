@@ -36,6 +36,6 @@ export class AppModule {
 		// Convert `PopupComponent` to a custom element.
 		const codeBlockWithHeaderElement = createCustomElement(CodeBlockWithHeaderComponent, {injector});
 		// Register the custom element with the browser.
-		customElements.define('ng-code-block-with-header', codeBlockWithHeaderElement);
+		customElements.define('ngs-code-block-with-header', codeBlockWithHeaderElement);
 	}
 }

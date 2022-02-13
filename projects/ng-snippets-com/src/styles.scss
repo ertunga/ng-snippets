@@ -14,7 +14,7 @@ pre code.hljs {
 	max-width: unset;
 
 	a {
-		@apply no-underline;
+		@apply no-underline cursor-pointer;
 	}
 
 	pre {

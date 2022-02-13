@@ -1,7 +1,6 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'app-code-block-with-header',
   templateUrl: './code-block-with-header.component.html',
   styleUrls: ['./code-block-with-header.component.scss']
 })

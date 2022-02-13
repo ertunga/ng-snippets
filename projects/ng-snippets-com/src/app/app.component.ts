@@ -13,7 +13,10 @@ export class AppComponent {
 	snippets = snippets;
 	isOpened = false;
 
-	constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
+	constructor(
+		@Inject(DOCUMENT) private document: Document,
+		private router: Router
+	) {}
 
 	toggleMenu(): void {
 		this.isOpened ? this.closeMenu() : this.openMenu();

@@ -2,50 +2,42 @@ $header-height: 4rem;
 $content-margin-top: 3rem;
 
 header {
-	display: flex;
-	justify-content: center;
-	position: sticky;
-	top: 0;
+	@apply flex justify-center sticky top-0 backdrop-filter backdrop-blur-lg border-b border-gray-200;
 	height: $header-height;
 	transition: box-shadow .2s ease-in;
 
-	.container {
+	a {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--text-color);
 
-		a {
-			display: flex;
-			align-items: center;
-			font-size: 18px;
-			font-weight: 700;
-			color: var(--text-color);
+		.logo {
+			@apply my-0;
+			width: 2.5rem;
+			margin-right: 0.75rem;
+		}
+	}
 
-			.logo {
-				width: 2.5rem;
-				margin-right: 0.75rem;
-			}
+	.menu-button {
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0.5rem;
+		display: none;
+		border-radius: .5rem;
+		cursor: pointer;
+
+		@media screen and (max-width: 1024px) {
+			display: block;
 		}
 
-		.menu-button {
-			width: 2.5rem;
-			height: 2.5rem;
-			padding: 0.5rem;
-			display: none;
-			border-radius: .5rem;
-			cursor: pointer;
+		&:hover {
+			background-color: var(--border-color);
+		}
 
-			@media screen and (max-width: 1024px) {
-				display: block;
-			}
-
-			&:hover {
-				background-color: var(--border-color);
-			}
-
-			&:focus {
-				box-shadow: 0 0 0 3px var(--primary);
-			}
+		&:focus {
+			box-shadow: 0 0 0 3px var(--primary);
 		}
 	}
 }
