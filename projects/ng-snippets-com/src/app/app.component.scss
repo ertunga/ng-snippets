@@ -4,14 +4,19 @@ $content-margin-top: 3rem;
 header {
 	@apply flex justify-center sticky top-0 backdrop-filter backdrop-blur-lg border-b border-gray-200;
 	height: $header-height;
-	transition: box-shadow .2s ease-in;
+	transition: box-shadow .2s ease-in; // ?
 
+	// ?
 	a {
 		display: flex;
 		align-items: center;
 		font-size: 18px;
 		font-weight: 700;
 		color: var(--text-color);
+	}
+
+	.icon-button {
+		@apply p-2 rounded-full hover:bg-gray-100;
 	}
 }
 

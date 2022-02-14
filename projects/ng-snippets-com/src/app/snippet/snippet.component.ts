@@ -6,7 +6,7 @@ import { SnippetService } from '../snippet.service';
 import { HighlightJS } from 'ngx-highlightjs';
 
 @Component({
-	selector: 'app-snippet',
+	selector: 'ngs-snippet',
 	templateUrl: './snippet.component.html',
 	styleUrls: ['./snippet.component.scss']
 })

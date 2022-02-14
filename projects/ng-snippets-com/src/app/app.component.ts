@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {snippets} from "./snippets";
 
 @Component({
-	selector: 'app-root',
+	selector: 'ngs-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
