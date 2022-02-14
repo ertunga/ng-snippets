@@ -12,33 +12,6 @@ header {
 		font-size: 18px;
 		font-weight: 700;
 		color: var(--text-color);
-
-		.logo {
-			@apply my-0;
-			width: 2.5rem;
-			margin-right: 0.75rem;
-		}
-	}
-
-	.menu-button {
-		width: 2.5rem;
-		height: 2.5rem;
-		padding: 0.5rem;
-		display: none;
-		border-radius: .5rem;
-		cursor: pointer;
-
-		@media screen and (max-width: 1024px) {
-			display: block;
-		}
-
-		&:hover {
-			background-color: var(--border-color);
-		}
-
-		&:focus {
-			box-shadow: 0 0 0 3px var(--primary);
-		}
 	}
 }
 

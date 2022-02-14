@@ -1,0 +1,31 @@
+.prose {
+	max-width: unset;
+
+	a {
+		@apply no-underline cursor-pointer;
+	}
+
+	pre {
+		@apply mb-12 mt-0 mx-0 rounded-t-none rounded-b-lg shadow-lg text-base;
+
+		@media screen and (max-width: 1024px) {
+			@apply text-sm;
+		}
+	}
+
+	/*
+	p > code {
+		color: var(--category-color);
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: 600;
+
+		&::before {
+			content: '`';
+		}
+
+		&::after {
+			content: '`';
+		}
+	} */
+}
