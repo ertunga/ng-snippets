@@ -16,16 +16,17 @@ header {
 	}
 
 	.icon-button {
-		@apply p-2 rounded-full hover:bg-gray-100;
+		@apply p-2 w-10 h-10 rounded-full hover:bg-gray-100;
 	}
 }
 
 .content {
-	display: flex;
+	@apply flex;
 	margin-top: $content-margin-top;
 
 	.sidebar {
-		flex: 0 0 16rem;
+		@apply hidden px-6 lg:block;
+		flex: 0 0 18rem;
 
 		@media screen and (max-width: 1024px) {
 			display: none;
@@ -38,16 +39,14 @@ header {
 			nav {
 
 				a {
-					display: flex;
-					align-items: center;
+					@apply flex items-center text-gray-500;
 
 					&:not(:first-child) {
 						margin-top: 1rem;
 					}
 
 					&.active {
-						color: var(--text-color);
-						font-weight: 500;
+						@apply text-gray-900;
 					}
 				}
 			}
@@ -55,14 +54,7 @@ header {
 	}
 
 	main {
-		flex: 1 1 0;
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
-
-		@media screen and (max-width: 1024px) {
-			width: 90%;
-		}
+		@apply flex-1;
 	}
 }
 
