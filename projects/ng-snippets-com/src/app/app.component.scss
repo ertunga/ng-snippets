@@ -4,16 +4,6 @@ $content-margin-top: 3rem;
 header {
 	@apply flex justify-center sticky top-0 backdrop-filter backdrop-blur-lg border-b border-gray-200;
 	height: $header-height;
-	transition: box-shadow .2s ease-in; // ?
-
-	// ?
-	a {
-		display: flex;
-		align-items: center;
-		font-size: 18px;
-		font-weight: 700;
-		color: var(--text-color);
-	}
 
 	.icon-button {
 		@apply p-2 w-10 h-10 rounded-full hover:bg-gray-100;
@@ -24,30 +14,23 @@ header {
 	@apply flex;
 	margin-top: $content-margin-top;
 
-	.sidebar {
+	aside {
 		@apply hidden px-6 lg:block;
 		flex: 0 0 18rem;
 
-		@media screen and (max-width: 1024px) {
-			display: none;
-		}
-
-		.nav-wrapper {
+		nav {
 			position: sticky;
 			top: $content-margin-top + $header-height;
 
-			nav {
+			a {
+				@apply flex items-center text-gray-500;
 
-				a {
-					@apply flex items-center text-gray-500;
+				&:not(:first-child) {
+					margin-top: 1rem;
+				}
 
-					&:not(:first-child) {
-						margin-top: 1rem;
-					}
-
-					&.active {
-						@apply text-gray-900;
-					}
+				&.active {
+					@apply text-gray-900;
 				}
 			}
 		}
@@ -55,37 +38,5 @@ header {
 
 	main {
 		@apply flex-1;
-	}
-}
-
-.mobile-menu {
-	position: fixed;
-	left: 0;
-	top: $header-height;
-	bottom: 0;
-	right: 0;
-	background-color: white;
-	overflow-y: scroll;
-
-	.nav-wrapper {
-		margin-top: $content-margin-top;
-		margin-bottom: $content-margin-top;
-
-		nav {
-
-			a {
-				display: flex;
-				align-items: center;
-
-				&:not(:first-child) {
-					margin-top: 1rem;
-				}
-
-				&.active {
-					color: var(--text-color);
-					font-weight: 500;
-				}
-			}
-		}
 	}
 }
