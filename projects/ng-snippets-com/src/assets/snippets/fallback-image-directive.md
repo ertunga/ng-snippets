@@ -1,6 +1,6 @@
 # Fallback Image Directive
 
-Use this directive with any img element to prevent broken images caused by external URLs that doesn't work or exist. 
+Use this directive with any `img` element to prevent broken images caused by external URLs that doesn't work or exist. 
 You can provide a fallback image from the assets folder, or you can provide any URL.
 
 <ngs-code-block-with-header file-name="fallback-image.directive.ts">
@@ -13,7 +13,7 @@ import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 })
 export class FallbackImageDirective {
 
-    @Input() fallbackImage!: string;
+    @Input() fallbackImage!: string | undefined;
 
     constructor(private elementRef: ElementRef) { }
 
@@ -33,7 +33,7 @@ export class FallbackImageDirective {
 
 ## Usage
 
-fallbackImage directive can only be used on img elements. You can pass an image from the assets folder or provide any URL.
+`fallbackImage` directive can only be used on img elements. You can pass an image from the assets folder or provide any URL.
 
 <ngs-code-block-with-header>
 

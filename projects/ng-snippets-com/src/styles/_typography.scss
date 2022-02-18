@@ -17,19 +17,8 @@ body {
 		}
 	}
 
-	/*
 	p > code {
-		color: var(--category-color);
-		font-family: inherit;
 		font-size: inherit;
 		font-weight: 600;
-
-		&::before {
-			content: '`';
-		}
-
-		&::after {
-			content: '`';
-		}
-	} */
+	}
 }

@@ -1,1 +1,28 @@
-<p>home</p>
+<h1>Speed up your coding with Ng Snippets</h1>
+<p>
+    Simple, ready-made, well documented Angular services, directives and pipes to prototype and develop quickly.
+    Easily copy and paste into your project. Jump right into it by selecting an item from the menu.
+</p>
+
+<h2>Latest additions</h2>
+<div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+    <a *ngFor="let snippet of snippets" [routerLink]="snippet.slug" class="snippet-card">
+        <h3>{{snippet.title}}</h3>
+        <p class="text-gray-700">snippet category here</p>
+        <div class="icon-wrapper">
+            arrow right
+        </div>
+    </a>
+</div>
+
+<h2>Contribute</h2>
+<div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
+    <a href="https://github.com/ertunga/ng-snippets" target="_blank" class="card">
+        <div class="flex items-center">
+            <img src="./assets/github-logo.svg" alt="Github logo" class="w-10 h-10 mr-6">
+            <span>Open Github</span>
+        </div>
+
+        ext link
+    </a>
+</div>
