@@ -12,15 +12,16 @@ header {
 
 .content {
 	@apply flex;
-	margin-top: $content-margin-top;
 
 	aside {
-		@apply hidden px-6 lg:block;
-		flex: 0 0 18rem;
+		top: $header-height;
+		width: 18rem;
+
+		&.open {
+			@apply w-full block;
+		}
 
 		nav {
-			position: sticky;
-			top: $content-margin-top + $header-height;
 
 			a {
 				@apply flex items-center text-gray-500;
@@ -37,6 +38,12 @@ header {
 	}
 
 	main {
-		@apply flex-1;
+		@apply flex-1 pt-12 min-w-0;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+
+		@media screen and (min-width: 1024px) {			
+			padding-left: 18rem;
+		}
 	}
 }

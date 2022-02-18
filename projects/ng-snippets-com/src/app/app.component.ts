@@ -1,7 +1,7 @@
-import {Component, Inject} from '@angular/core';
-import {DOCUMENT} from "@angular/common";
-import {Router} from "@angular/router";
-import {snippets} from "./snippets";
+import { DOCUMENT } from "@angular/common";
+import { Component, Inject } from '@angular/core';
+import { Router } from "@angular/router";
+import { snippets } from "./snippets";
 
 @Component({
 	selector: 'ngs-root',
@@ -16,26 +16,23 @@ export class AppComponent {
 	constructor(
 		@Inject(DOCUMENT) private document: Document,
 		private router: Router
-	) {}
+	) { }
 
 	toggleMenu(): void {
 		this.isOpened ? this.closeMenu() : this.openMenu();
 	}
 
 	private openMenu(): void {
-		this.isOpened = true;
-		this.document.body.classList.add('prevent-scroll');
-	}
-
-	private closeMenu(): void {
-		this.isOpened = false;
-		this.document.body.classList.remove('prevent-scroll');
-	}
-
-	closeMenuAndNavigate(route: string): void {
-		if (this.isOpened) {
-			this.closeMenu();
+		if (!this.isOpened) {
+			this.isOpened = true;
+			this.document.body.classList.add('overflow-hidden');
 		}
-		this.router.navigateByUrl(route);
+	}
+
+	closeMenu(): void {
+		if (this.isOpened) {
+			this.isOpened = false;
+			this.document.body.classList.remove('overflow-hidden');
+		}
 	}
 }
