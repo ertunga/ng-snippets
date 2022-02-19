@@ -7,6 +7,7 @@ import MarkedOptions = marked.MarkedOptions;
 })
 export class MarkdownPipe implements PipeTransform {
 	transform(value: string, options?: MarkedOptions): string {
+		console.log('md pipe');
 		return value ? marked(value, options) : '';
 	}
 }

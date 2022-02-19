@@ -18,7 +18,7 @@ export class SnippetComponent implements AfterViewInit {
 		private router: Router,
 		private snippetService: SnippetService,
 		private highlightJS: HighlightJS
-	) {}
+	) { }
 
 	ngAfterViewInit(): void {
 		this.activatedRoute.params.pipe(map((params) => params['slug'])).subscribe((slug: string) => {
@@ -31,7 +31,7 @@ export class SnippetComponent implements AfterViewInit {
 					})
 				)
 				.subscribe((content) => {
-					console.log('content: ', content);
+					console.log('content');
 					this.content = content;
 					this.highlightJS.highlightAll().subscribe(() => console.log('highlight'));
 				});
