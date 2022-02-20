@@ -4,7 +4,7 @@ A pipe to truncate strings. Takes two parameters: `length` and `suffix`.
 First parameter `length` is mandatory and it determines the length of the truncated text.
 Second parameter `suffix` is optional and when omitted the default value is '...'
 
-<ngs-code-block-with-header fileName="truncate.pipe.ts">
+<ngs-code-block-with-header file-name="truncate.pipe.ts">
 
 ```typescript
 import {Pipe, PipeTransform} from '@angular/core';

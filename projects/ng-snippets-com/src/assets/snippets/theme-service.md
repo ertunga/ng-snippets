@@ -2,7 +2,7 @@
 
 A great service to theme your app.
 
-<ngs-code-block-with-header fileName="theme.service.ts">
+<ngs-code-block-with-header file-name="theme.service.ts">
 
 ```typescript
 export enum Theme {

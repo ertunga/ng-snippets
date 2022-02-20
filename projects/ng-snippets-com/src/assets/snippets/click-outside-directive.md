@@ -4,7 +4,7 @@ A directive that can detect clicks outside of the HTML element it is attached to
 `clickOutside` event emitter will emit the `Event` for each click. 
 You can pass it as a parameter for your method or completely omit it.
 
-<ngs-code-block-with-header fileName="click-outside.directive.ts">
+<ngs-code-block-with-header file-name="click-outside.directive.ts">
 
 ```typescript
 import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';

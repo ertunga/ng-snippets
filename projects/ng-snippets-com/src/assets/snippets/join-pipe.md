@@ -4,7 +4,7 @@ A pipe to join items in an array with a separator.
 It has one optional argument, `separator`, to be used as a separator between array items.
 If omitted, the default value is ', '
 
-<ngs-code-block-with-header fileName="join.pipe.ts">
+<ngs-code-block-with-header file-name="join.pipe.ts">
 
 ```typescript
 import {Pipe, PipeTransform} from '@angular/core';

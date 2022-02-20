@@ -1,4 +1,4 @@
-import {Injector, NgModule} from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MarkdownPipe } from './markdown.pipe';
 import { TrustPipe } from './trust.pipe';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
-import {createCustomElement} from "@angular/elements";
+import { createCustomElement } from "@angular/elements";
 import { CodeBlockWithHeaderComponent } from './web-component/code-block-with-header/code-block-with-header.component';
 
 @NgModule({
@@ -34,7 +34,7 @@ export class AppModule {
 
 	constructor(private injector: Injector) {
 		// Convert `PopupComponent` to a custom element.
-		const codeBlockWithHeaderElement = createCustomElement(CodeBlockWithHeaderComponent, {injector});
+		const codeBlockWithHeaderElement = createCustomElement(CodeBlockWithHeaderComponent, { injector });
 		// Register the custom element with the browser.
 		customElements.define('ngs-code-block-with-header', codeBlockWithHeaderElement);
 	}

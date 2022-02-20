@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EMPTY } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { HighlightJS } from 'ngx-highlightjs';
 	templateUrl: './snippet.component.html',
 	styleUrls: ['./snippet.component.scss']
 })
-export class SnippetComponent implements AfterViewInit {
+export class SnippetComponent implements OnInit, AfterViewChecked {
 	content: string | undefined;
 
 	constructor(
@@ -20,7 +20,7 @@ export class SnippetComponent implements AfterViewInit {
 		private highlightJS: HighlightJS
 	) { }
 
-	ngAfterViewInit(): void {
+	ngOnInit(): void {
 		this.activatedRoute.params.pipe(map((params) => params['slug'])).subscribe((slug: string) => {
 			this.snippetService
 				.get(slug)
@@ -33,8 +33,11 @@ export class SnippetComponent implements AfterViewInit {
 				.subscribe((content) => {
 					console.log('content');
 					this.content = content;
-					this.highlightJS.highlightAll().subscribe(() => console.log('highlight'));
 				});
 		});
+	}
+
+	ngAfterViewChecked(): void {
+		this.highlightJS.highlightAll().subscribe(() => console.log('highlight'));
 	}
 }

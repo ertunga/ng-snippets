@@ -3,7 +3,7 @@
 Pretty much a hello world example for services. The counter service holds the `count` variable and
 increment, decrement and set methods to change its value.
 
-<ngs-code-block-with-header fileName="counter.service.ts">
+<ngs-code-block-with-header file-name="counter.service.ts">
 
 ```typescript
 import {Injectable} from '@angular/core';
