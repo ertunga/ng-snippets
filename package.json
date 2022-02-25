@@ -13,7 +13,8 @@
     "prettier:check": "prettier --check './projects/**/*.ts'",
     "prettier:write": "prettier --write './projects/**/*.ts'",
     "format": "npm run prettier:write && npm run lint:fix",
-    "explore-bundle": "ng build --source-map --named-chunks && source-map-explorer dist/**/*.js"
+    "explore-bundle": "ng build --source-map --named-chunks && source-map-explorer dist/**/*.js",
+    "deploy": "ng build && firebase deploy"
   },
   "private": true,
   "dependencies": {

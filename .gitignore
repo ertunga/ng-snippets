@@ -45,3 +45,6 @@ TODO.md
 # System Files
 .DS_Store
 Thumbs.db
+
+# firebase
+.firebase
