@@ -1,7 +1,7 @@
-import { DOCUMENT } from "@angular/common";
+import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { Router } from "@angular/router";
-import { snippets } from "./snippets";
+import { Router } from '@angular/router';
+import { snippets } from './snippets';
 
 @Component({
 	selector: 'ngs-root',
@@ -9,11 +9,10 @@ import { snippets } from "./snippets";
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
 	snippets = snippets;
 	isOpened = false;
 
-	constructor(@Inject(DOCUMENT) private document: Document) { }
+	constructor(@Inject(DOCUMENT) private document: Document) {}
 
 	toggleMenu(): void {
 		this.isOpened ? this.closeMenu() : this.openMenu();

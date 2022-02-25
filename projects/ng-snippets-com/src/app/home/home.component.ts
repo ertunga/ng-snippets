@@ -7,6 +7,5 @@ import { snippets } from '../snippets';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
 	snippets = snippets;
 }

@@ -18,7 +18,7 @@ export class SnippetComponent implements OnInit, AfterViewChecked {
 		private router: Router,
 		private snippetService: SnippetService,
 		private highlightJS: HighlightJS
-	) { }
+	) {}
 
 	ngOnInit(): void {
 		this.activatedRoute.params.pipe(map((params) => params['slug'])).subscribe((slug: string) => {

@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 import { JoinPipe } from './join.pipe';
 
 @NgModule({
-  declarations: [
-    JoinPipe
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [JoinPipe]
+	declarations: [JoinPipe],
+	imports: [CommonModule],
+	exports: [JoinPipe]
 })
-export class JoinModule { }
+export class JoinModule {}
