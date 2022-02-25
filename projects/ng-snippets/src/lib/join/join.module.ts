@@ -8,6 +8,7 @@ import { JoinPipe } from './join.pipe';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [JoinPipe]
 })
 export class JoinModule { }

@@ -7,15 +7,19 @@ export class CounterService {
 
   count = 0;
 
-  increment(): void {
-    this.count += 1;
+  increase(delta = 1): void {
+    this.count += delta;
   }
 
-  decrement(): void {
-    this.count -= 1;
+  decrease(delta = 1): void {
+    this.count -= delta;
   }
 
   set(value: number): void {
     this.count = value;
+  }
+
+  reset(): void {
+    this.count = 0;
   }
 }

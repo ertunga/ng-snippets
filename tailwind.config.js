@@ -1,7 +1,6 @@
 module.exports = {
   content: [
-    "./projects/ng-snippets-com/**/*.{html,ts,scss}",
-    "./projects/ng-snippets-com/src/index.html",
+    "./projects/ng-snippets-com/**/*.{html,ts,scss}"
   ],
   theme: {
     extend: {},
