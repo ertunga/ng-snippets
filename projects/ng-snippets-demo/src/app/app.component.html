@@ -18,14 +18,14 @@
         <p>{{ ["item1", "item2", "item3"] | join }}</p>
         <p>{{ ["item1", "item2", "item3"] | join: '-' }}</p>
         <p>{{ ["item1", "item2", "item3"] | join: '/' }}</p>
-        <p>{{ ["item1", "item2", "item3"] | join: '>' }}</p>
+        <p>{{ ["item1", "item2", "item3"] | join: ' > ' }}</p>
     </section>
 
     <section>
         <h2>Truncate Pipe</h2>
 
-        {{ "Text to be truncated" | truncate: 17 }}
-        {{ "Different suffix" | truncate: 14: '__' }}
-        {{ "Short text" | truncate: 12 }}
+        <p>{{ "Text to be truncated" | truncate: 17 }}</p>
+        <p>{{ "Different suffix" | truncate: 14: '__' }}</p>
+        <p>{{ "Short text" | truncate: 12 }}</p>
     </section>
 </main>
