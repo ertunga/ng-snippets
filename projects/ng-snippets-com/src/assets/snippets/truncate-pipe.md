@@ -4,6 +4,30 @@ A pipe to truncate strings. Takes two parameters: `length` and `suffix`.
 First parameter `length` is mandatory and it determines the length of the truncated text.
 Second parameter `suffix` is optional and when omitted the default value is '...'
 
+## Usage
+
+Use it in the component template
+
+<ngs-code-block-with-header>
+
+```
+{{ "Text to be truncated" | truncate: 17 }}
+{{ "Different suffix" | truncate: 14: '__' }} 
+{{ "Short text" | truncate: 12 }}
+```
+
+</ngs-code-block-with-header>
+
+Result: 
+
+```
+Text to be trunca...
+Different suff__
+Short text
+```
+
+## Source
+
 <ngs-code-block-with-header file-name="truncate.pipe.ts">
 
 ```typescript
@@ -26,24 +50,3 @@ export class TruncatePipe implements PipeTransform {
 
 </ngs-code-block-with-header>
 
-## Usage
-
-Use it in the component template
-
-<ngs-code-block-with-header>
-
-```angular2html
-{{ "Text to be truncated" | truncate: 17 }}
-{{ "Different suffix" | truncate: 14: '__' }} 
-{{ "Short text" | truncate: 12 }}
-```
-
-</ngs-code-block-with-header>
-
-Result: 
-
-```html
-Text to be trunca...
-Different suff__
-Short text
-```
