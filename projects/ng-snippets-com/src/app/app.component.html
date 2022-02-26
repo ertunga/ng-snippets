@@ -1,58 +1,66 @@
 <div class="flex flex-col min-h-screen prose">
-    <header>
-        <div class="flex items-center justify-between w-full px-6">
-            <a routerLink="/" (click)="closeMenu()" class="flex items-center">
-                <img src="../assets/ng-snippets-logo.svg" class="w-10 my-0 mr-3" alt="Angular Snippets logo">
-                <span class="text-lg text-gray-900 font-semibold" translate="no">Angular Snippets</span>
-            </a>
+	<header>
+		<div class="flex items-center justify-between w-full px-6">
+			<a routerLink="/" (click)="closeMenu()" class="flex items-center">
+				<img src="../assets/ng-snippets-logo.svg" class="w-10 my-0 mr-3" alt="Angular Snippets logo" />
+				<span class="text-lg text-gray-900 font-semibold" translate="no">Angular Snippets</span>
+			</a>
 
-            <div class="flex">
-                <a href="https://github.com/ertunga/ng-snippets" class="icon-button" target="_blank">
-                    <img src="./assets/github-logo.svg" class="my-0" alt="Github logo">
-                </a>
+			<div class="flex">
+				<a href="https://github.com/ertunga/ng-snippets" class="icon-button" target="_blank">
+					<img src="./assets/github-logo.svg" class="my-0" alt="Github logo" />
+				</a>
 
-                <button (click)="toggleMenu()" class="block lg:hidden icon-button">
-                    <!-- Menu icon -->
-                    <svg *ngIf="!isOpened" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+				<button (click)="toggleMenu()" class="block lg:hidden icon-button">
+					<!-- Menu icon -->
+					<svg *ngIf="!isOpened" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
 
-                    <!-- X icon -->
-                    <svg *ngIf="isOpened" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
+					<!-- X icon -->
+					<svg
+						*ngIf="isOpened"
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</header>
 
-    <div class="content">
-        <aside [class.open]="isOpened"
-            class="hidden px-6 pt-12 flex-none lg:block h-screen fixed overflow-y-auto bg-white">
-            <nav>
-                <a *ngFor="let snippet of snippets" [routerLink]="'/snippet/' + snippet.slug" (click)="closeMenu()"
-                    routerLinkActive="active">
-                    <span [style.background]="'#B91C1C'"
-                        style="display: inline-block; width: 1.5rem; height: 1.5rem; margin-right: .75rem; border-radius: 100%;">
-                    </span>
-                    <span>{{snippet.title}}</span>
-                </a>
-            </nav>
-        </aside>
+	<div class="content">
+		<aside [class.open]="isOpened" class="hidden px-6 pt-12 flex-none lg:block h-screen fixed overflow-y-auto bg-white">
+			<nav>
+				<a
+					*ngFor="let snippet of snippets"
+					[routerLink]="'/snippet/' + snippet.slug"
+					(click)="closeMenu()"
+					routerLinkActive="active"
+				>
+					<span
+						[style.background]="'#B91C1C'"
+						style="display: inline-block; width: 1.5rem; height: 1.5rem; margin-right: 0.75rem; border-radius: 100%"
+					>
+					</span>
+					<span>{{ snippet.title }}</span>
+				</a>
+			</nav>
+		</aside>
 
-        <main>
-            <div class="w-full lg:px-6 mx-auto max-w-3xl">
-                <router-outlet></router-outlet>
+		<main>
+			<div class="w-full lg:px-6 mx-auto max-w-3xl">
+				<router-outlet></router-outlet>
 
-                <footer class="mt-16 mb-24 text-gray-400 text-sm">
-                    <hr>
-                    <span>ngsnippets.com</span>
-                </footer>
-            </div>
-        </main>
-    </div>
+				<footer class="mt-16 mb-24 text-gray-400 text-sm">
+					<hr />
+					<span>ngsnippets.com</span>
+				</footer>
+			</div>
+		</main>
+	</div>
 </div>

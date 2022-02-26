@@ -1,11 +1,11 @@
 .code-header {
 	@apply flex justify-between items-center mt-12;
 	padding: 0.43em 1.14em;
-	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 	background-color: var(--tw-prose-pre-bg);
 	color: var(--tw-prose-pre-code);
-	border-radius: .375rem .375rem 0 0;
-	border-bottom: 1px solid #6B7280;
+	border-radius: 0.375rem 0.375rem 0 0;
+	border-bottom: 1px solid #6b7280;
 
 	@media screen and (max-width: 1024px) {
 		font-size: 14px;

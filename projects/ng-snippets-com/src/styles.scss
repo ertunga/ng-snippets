@@ -1,7 +1,7 @@
 // Tailwind
-@use "tailwindcss/base";
-@use "tailwindcss/components";
-@use "tailwindcss/utilities";
+@use 'tailwindcss/base';
+@use 'tailwindcss/components';
+@use 'tailwindcss/utilities';
 
 // Partial
 @use './styles/typography';
@@ -12,4 +12,3 @@
 pre code.hljs {
 	@apply inline-block p-0;
 }
-

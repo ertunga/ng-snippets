@@ -10,8 +10,8 @@
     "test": "ng test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prettier:check": "prettier --check './projects/**/*.ts'",
-    "prettier:write": "prettier --write './projects/**/*.ts'",
+    "prettier:check": "prettier --check './projects/**/*.{html,scss,ts}'",
+    "prettier:write": "prettier --write './projects/**/*.{html,scss,ts}'",
     "format": "npm run prettier:write && npm run lint:fix",
     "explore-bundle": "ng build --source-map --named-chunks && source-map-explorer dist/**/*.js",
     "deploy": "ng build && firebase deploy"

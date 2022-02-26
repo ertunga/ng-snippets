@@ -1,31 +1,31 @@
 <main>
-    <section>
-        <h2>Counter Service</h2>
+	<section>
+		<h2>Counter Service</h2>
 
-        <p>Count: {{ counterService.count }}</p>
+		<p>Count: {{ counterService.count }}</p>
 
-        <button (click)="counterService.increase()">Increase</button>
-        <button (click)="counterService.increase(7)">Increase by 7</button>
-        <button (click)="counterService.decrease()">Decrease</button>
-        <button (click)="counterService.decrease(7)">Decrease by 7</button>
-        <button (click)="counterService.set(100)">Set to 100</button>
-        <button (click)="counterService.reset()">Reset</button>
-    </section>
+		<button (click)="counterService.increase()">Increase</button>
+		<button (click)="counterService.increase(7)">Increase by 7</button>
+		<button (click)="counterService.decrease()">Decrease</button>
+		<button (click)="counterService.decrease(7)">Decrease by 7</button>
+		<button (click)="counterService.set(100)">Set to 100</button>
+		<button (click)="counterService.reset()">Reset</button>
+	</section>
 
-    <section>
-        <h2>Join Pipe</h2>
+	<section>
+		<h2>Join Pipe</h2>
 
-        <p>{{ ["item1", "item2", "item3"] | join }}</p>
-        <p>{{ ["item1", "item2", "item3"] | join: '-' }}</p>
-        <p>{{ ["item1", "item2", "item3"] | join: '/' }}</p>
-        <p>{{ ["item1", "item2", "item3"] | join: ' > ' }}</p>
-    </section>
+		<p>{{ ['item1', 'item2', 'item3'] | join }}</p>
+		<p>{{ ['item1', 'item2', 'item3'] | join: '-' }}</p>
+		<p>{{ ['item1', 'item2', 'item3'] | join: '/' }}</p>
+		<p>{{ ['item1', 'item2', 'item3'] | join: ' > ' }}</p>
+	</section>
 
-    <section>
-        <h2>Truncate Pipe</h2>
+	<section>
+		<h2>Truncate Pipe</h2>
 
-        <p>{{ "Text to be truncated" | truncate: 17 }}</p>
-        <p>{{ "Different suffix" | truncate: 14: '__' }}</p>
-        <p>{{ "Short text" | truncate: 12 }}</p>
-    </section>
+		<p>{{ 'Text to be truncated' | truncate: 17 }}</p>
+		<p>{{ 'Different suffix' | truncate: 14:'__' }}</p>
+		<p>{{ 'Short text' | truncate: 12 }}</p>
+	</section>
 </main>
