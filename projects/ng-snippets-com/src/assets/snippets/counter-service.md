@@ -6,27 +6,31 @@ increment, decrement and set methods to change its value.
 <ngs-code-block-with-header file-name="counter.service.ts">
 
 ```typescript
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CounterService {
-
 	count = 0;
 
-	increment(): void {
-		this.count += 1;
+	increase(delta = 1): void {
+		this.count += delta;
 	}
 
-	decrement(): void {
-		this.count -= 1;
+	decrease(delta = 1): void {
+		this.count -= delta;
 	}
 
 	set(value: number): void {
 		this.count = value;
 	}
+
+	reset(): void {
+		this.count = 0;
+	}
 }
+
 ```
 
 </ngs-code-block-with-header>
@@ -57,8 +61,12 @@ In the component template, `count` variable can be used to display the current v
 ```html
 <p>Count: {{ counterService.count }}</p>
 
-<button (click)="counterService.increment()">Increase by 1</button>
-<button (click)="counterService.decrement()">Decrease by 1</button>
+<button (click)="counterService.increase()">Increase</button>
+<button (click)="counterService.increase(7)">Increase by 7</button>
+<button (click)="counterService.decrease()">Decrease</button>
+<button (click)="counterService.decrease(7)">Decrease by 7</button>
+<button (click)="counterService.set(100)">Set to 100</button>
+<button (click)="counterService.reset()">Reset</button>
 ```
 
 </ngs-code-block-with-header>
