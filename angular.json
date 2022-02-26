@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/ng-snippets",
       "sourceRoot": "projects/ng-snippets/src",
-      "prefix": "lib",
+      "prefix": "ngs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
