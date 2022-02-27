@@ -15,7 +15,8 @@
     "prettier:write": "prettier --write './projects/**/*.{html,scss,ts}'",
     "format": "npm run prettier:write && npm run lint:fix",
     "explore-bundle": "ng build --source-map --named-chunks && source-map-explorer dist/**/*.js",
-    "deploy": "ng build && firebase deploy"
+    "deploy": "ng build && firebase deploy",
+    "publish:lib": "npm run format && npm run build:lib && cd dist/ng-snippets && npm publish"
   },
   "private": true,
   "dependencies": {

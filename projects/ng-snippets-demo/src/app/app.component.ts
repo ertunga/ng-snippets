@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CounterService } from '../../../ng-snippets/src/lib/counter/counter.service';
+import { CounterService } from '../../../ng-snippets/src/lib/counter';
 
 @Component({
 	selector: 'ngs-root',
