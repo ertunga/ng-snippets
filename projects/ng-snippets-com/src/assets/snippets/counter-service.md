@@ -1,11 +1,11 @@
 # Counter Service
 
-Pretty much a hello world example for services. The counter service holds the `count` variable and
-increment, decrement and set methods to change its value.
+Pretty much a hello world example for services. The counter service holds the `count` state and
+provides some methods to change its value.
 
 ## Usage
 
-Just inject it into a component/service/directive/pipe/guard.
+Just inject the service into a component/service/directive/pipe/guard.
 Here is an example in a component.
 
 <ngs-code-block-with-header>
@@ -22,16 +22,16 @@ export class SomeComponent {
 
 </ngs-code-block-with-header>
 
-You can use the service in the component's `.ts` file and the template.
+You can use the service in the component's `.ts` file and in its template.
 
 <ngs-code-block-with-header>
 
 ```html
 <p>Count: {{ counterService.count }}</p>
 
-<button (click)="counterService.increase()">Increase</button>
+<button (click)="counterService.increase()">Increase by 1</button>
 <button (click)="counterService.increase(7)">Increase by 7</button>
-<button (click)="counterService.decrease()">Decrease</button>
+<button (click)="counterService.decrease()">Decrease by 1</button>
 <button (click)="counterService.decrease(7)">Decrease by 7</button>
 <button (click)="counterService.set(100)">Set to 100</button>
 <button (click)="counterService.reset()">Reset</button>

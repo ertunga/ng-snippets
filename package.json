@@ -6,6 +6,7 @@
     "start": "ng serve",
     "start:demo": "ng serve --project ng-snippets-demo --port 4201",
     "build": "ng build",
+    "build:lib": "ng build ng-snippets",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "eslint .",

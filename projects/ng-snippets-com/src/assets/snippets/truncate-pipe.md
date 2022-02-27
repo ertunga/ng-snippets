@@ -2,7 +2,7 @@
 
 A pipe to truncate strings. Takes two parameters: `length` and `suffix`. 
 First parameter `length` is mandatory and it determines the length of the truncated text.
-Second parameter `suffix` is optional and when omitted the default value is '...'
+Second parameter `suffix` is optional and when omitted the default value is `...`
 
 ## Usage
 
