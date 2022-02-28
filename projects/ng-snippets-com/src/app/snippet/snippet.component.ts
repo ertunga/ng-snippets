@@ -7,8 +7,7 @@ import { HighlightJS } from 'ngx-highlightjs';
 
 @Component({
 	selector: 'ngs-snippet',
-	templateUrl: './snippet.component.html',
-	styleUrls: ['./snippet.component.scss']
+	template: '<article *ngIf="content" [innerHTML]="content | markdown | trust"></article>',
 })
 export class SnippetComponent implements OnInit, AfterViewChecked {
 	content: string | undefined;
@@ -18,7 +17,7 @@ export class SnippetComponent implements OnInit, AfterViewChecked {
 		private router: Router,
 		private snippetService: SnippetService,
 		private highlightJS: HighlightJS
-	) {}
+	) { }
 
 	ngOnInit(): void {
 		this.activatedRoute.params.pipe(map((params) => params['slug'])).subscribe((slug: string) => {
@@ -31,13 +30,12 @@ export class SnippetComponent implements OnInit, AfterViewChecked {
 					})
 				)
 				.subscribe((content) => {
-					console.log('content');
 					this.content = content;
 				});
 		});
 	}
 
 	ngAfterViewChecked(): void {
-		this.highlightJS.highlightAll().subscribe(() => console.log('highlight'));
+		this.highlightJS.highlightAll().subscribe();
 	}
 }
