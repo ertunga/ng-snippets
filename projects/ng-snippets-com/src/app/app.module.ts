@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SnippetComponent } from './snippet/snippet.component';
+import { HomeComponent } from './page/home/home.component';
+import { SnippetComponent } from './page/snippet/snippet.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { MarkdownPipe } from './markdown.pipe';
-import { TrustPipe } from './trust.pipe';
+import { NotFoundComponent } from './page/not-found/not-found.component';
+import { MarkdownPipe } from './pipe/markdown.pipe';
+import { TrustPipe } from './pipe/trust.pipe';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { createCustomElement } from '@angular/elements';
 import { CodeBlockWithHeaderComponent } from './web-component/code-block-with-header/code-block-with-header.component';

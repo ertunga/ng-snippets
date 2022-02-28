@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { snippets } from '../snippets';
+import { snippets } from '../../data/snippets';
 
 @Component({
 	selector: 'ngs-home',

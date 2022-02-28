@@ -2,7 +2,7 @@ import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EMPTY } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { SnippetService } from '../snippet.service';
+import { SnippetService } from '../../service/snippet.service';
 import { HighlightJS } from 'ngx-highlightjs';
 
 @Component({

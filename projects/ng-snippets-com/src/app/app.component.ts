@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { snippets } from './snippets';
+import { snippets } from './data/snippets';
 
 @Component({
 	selector: 'ngs-root',
