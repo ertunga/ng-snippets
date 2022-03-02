@@ -1,6 +1,5 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { snippets } from './data/snippets';
 
 @Component({

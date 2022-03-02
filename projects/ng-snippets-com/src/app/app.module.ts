@@ -32,9 +32,7 @@ import { CodeBlockWithHeaderComponent } from './web-component/code-block-with-he
 })
 export class AppModule {
 	constructor(private injector: Injector) {
-		// Convert `PopupComponent` to a custom element.
 		const codeBlockWithHeaderElement = createCustomElement(CodeBlockWithHeaderComponent, { injector });
-		// Register the custom element with the browser.
 		customElements.define('ngs-code-block-with-header', codeBlockWithHeaderElement);
 	}
 }

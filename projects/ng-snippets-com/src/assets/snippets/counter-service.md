@@ -33,7 +33,7 @@ You can use the service in the component's `.ts` file and in its template.
 <button (click)="counterService.increase(7)">Increase by 7</button>
 <button (click)="counterService.decrease()">Decrease by 1</button>
 <button (click)="counterService.decrease(7)">Decrease by 7</button>
-<button (click)="counterService.set(100)">Set to 100</button>
+<button (click)="counterService.count = 100">Set to 100</button>
 <button (click)="counterService.reset()">Reset</button>
 ```
 
@@ -50,22 +50,26 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class CounterService {
-	count = 0;
+	private _count = 0;
 
 	increase(delta = 1): void {
-		this.count += delta;
+		this._count += delta;
 	}
 
 	decrease(delta = 1): void {
-		this.count -= delta;
-	}
-
-	set(value: number): void {
-		this.count = value;
+		this._count -= delta;
 	}
 
 	reset(): void {
-		this.count = 0;
+		this._count = 0;
+	}
+
+	get count(): number {
+		return this._count;
+	}
+
+	set count(value: number) {
+		this._count = value;
 	}
 }
 
