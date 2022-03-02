@@ -2,7 +2,7 @@
 
 A pipe to join items in an array with a separator. 
 It has one optional parameter, `separator`, to be used as a separator between array items.
-If omitted, the default value is `, `
+If omitted, the default value is a comma followed by an empty space `, `
 
 ## Usage
 
