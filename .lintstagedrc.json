@@ -1,3 +1,6 @@
 {
-	"*.{html,scss,ts}": ["eslint --fix", "prettier --ignore-unknown --write"]
+	"*.{html,scss,ts}": [
+		"eslint --fix",
+		"prettier --ignore-unknown --write"
+	]
 }
