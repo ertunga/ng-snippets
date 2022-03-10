@@ -1,6 +1,7 @@
 {
 	"name": "ng-snippets",
 	"version": "0.0.0-development",
+	"homepage": "https://ngsnippets.com",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -65,13 +66,14 @@
 		"ng-packagr": "^13.0.0",
 		"postcss": "^8.4.6",
 		"prettier": "^2.5.1",
-		"semantic-release": "^19.0.2",
 		"source-map-explorer": "^2.5.2",
 		"tailwindcss": "^3.0.19",
-		"typescript": "~4.4.3"
+		"typescript": "~4.4.3",
+		"semantic-release": "^19.0.2"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ertunga/ng-snippets.git"
-	}
+	},
+	"license": "MIT"
 }
