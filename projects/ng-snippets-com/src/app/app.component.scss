@@ -23,14 +23,14 @@ header {
 
 		nav {
 			a {
-				@apply flex items-center text-gray-500;
+				@apply flex items-center p-1 text-gray-500 rounded-full hover:bg-gray-200;
 
 				&:not(:first-child) {
-					margin-top: 1rem;
+					@apply mt-2;
 				}
 
 				&.active {
-					@apply text-gray-900;
+					@apply text-gray-900 font-bold;
 				}
 			}
 		}
