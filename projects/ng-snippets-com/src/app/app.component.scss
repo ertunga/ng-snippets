@@ -37,9 +37,7 @@ header {
 	}
 
 	main {
-		@apply flex-1 pt-12 min-w-0;
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+		@apply flex-1 pt-12 min-w-0 px-6;
 
 		@media screen and (min-width: 1024px) {
 			padding-left: 18rem;
