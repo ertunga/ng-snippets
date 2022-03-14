@@ -37,10 +37,6 @@ header {
 	}
 
 	main {
-		@apply flex-1 pt-12 min-w-0 px-6;
-
-		@media screen and (min-width: 1024px) {
-			padding-left: 18rem;
-		}
+		@apply flex-1 pt-12 min-w-0 px-6 lg:pl-72;
 	}
 }
