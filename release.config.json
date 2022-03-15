@@ -1,16 +1,4 @@
 {
 	"branches": "master",
-	"pkgRoot": "dist/ng-snippets",
-	"plugins": [
-		[
-			"@semantic-release/commit-analyzer",
-			{
-				"preset": "angular",
-				"releaseRules": [
-					{ "type": "docs", "release": "patch" },
-					{ "type": "refactor", "release": "patch" }
-				]
-			}
-		]
-	]
+	"pkgRoot": "dist/ng-snippets"
 }
