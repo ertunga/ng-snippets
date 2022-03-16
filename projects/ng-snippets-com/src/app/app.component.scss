@@ -14,8 +14,8 @@ header {
 	@apply flex;
 
 	aside {
+		@apply w-72;
 		top: $header-height;
-		width: 18rem;
 
 		&.open {
 			@apply w-full block;
