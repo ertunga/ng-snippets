@@ -20,7 +20,7 @@
 		"semantic-release": "semantic-release",
 		"prepare": "husky install"
 	},
-	"private": true,
+	"private": false,
 	"dependencies": {
 		"@angular/animations": "~13.2.2",
 		"@angular/common": "~13.2.2",
