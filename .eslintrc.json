@@ -10,7 +10,7 @@
 			},
 			"extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates"],
 			"rules": {
-				"@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "ngs", "style": "camelCase" }],
+				"@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "", "style": "camelCase" }],
 				"@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "ngs", "style": "kebab-case" }]
 			}
 		},

@@ -28,4 +28,10 @@
 		<p>{{ 'Different suffix' | truncate: 14:'__' }}</p>
 		<p>{{ 'Short text' | truncate: 12 }}</p>
 	</section>
+
+	<section>
+		<h2>Click Outside Directive</h2>
+
+		<div (clickOutside)="handleClickOutside($event)" class="box">Click outside and open console</div>
+	</section>
 </main>
