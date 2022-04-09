@@ -20,7 +20,7 @@ One common scenario would be detecting clicks outside of a dropdown, modal or a 
 <ngs-code-block-with-header file-name="click-outside.directive.ts">
 
 ```typescript
-import { Directive, ElementRef, Output, EventEmitter, HostListener } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
 	selector: '[clickOutside]'
