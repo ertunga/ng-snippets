@@ -2,19 +2,23 @@
 	"name": "ng-snippets",
 	"version": "0.0.0-development",
 	"description": "Angular Snippets",
-	"keywords": [
-		"angular",
-		"snippets"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ertunga/ng-snippets"
-	},
 	"peerDependencies": {
 		"@angular/common": "^13.0.0",
 		"@angular/core": "^13.0.0"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"
+	},
+	"homepage": "https://ngsnippets.com",
+	"license": "MIT",
+	"keywords": [
+		"angular",
+		"snippets",
+		"typescript",
+		"javascript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ertunga/ng-snippets.git"
 	}
 }
