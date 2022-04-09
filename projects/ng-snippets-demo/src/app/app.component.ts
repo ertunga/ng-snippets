@@ -8,4 +8,8 @@ import { CounterService } from '../../../ng-snippets/counter';
 })
 export class AppComponent {
 	constructor(public counterService: CounterService) {}
+
+	handleClickOutside(event: Event): void {
+		console.log('clicked outside', event);
+	}
 }
