@@ -30,6 +30,19 @@
     </section>
 
     <section>
+        <h2>Truncate Words Pipe</h2>
+
+        <p>{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' | truncateWords: 5 }}</p>
+        <p>
+            {{
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                    | truncateWords: 7:'-'
+            }}
+        </p>
+        <p>{{ 'Lorem ipsum dolor sit amet' | truncateWords: 12 }}</p>
+    </section>
+
+    <section>
         <h2>Click Outside Directive</h2>
 
         <div (clickOutside)="handleClickOutside($event)" class="box">Click outside and open console</div>
