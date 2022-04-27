@@ -22,5 +22,9 @@ export const snippets = [
     {
         slug: 'truncate-pipe',
         title: 'Truncate Pipe'
+    },
+    {
+        slug: 'truncate-words-pipe',
+        title: 'Truncate Words Pipe'
     }
 ];

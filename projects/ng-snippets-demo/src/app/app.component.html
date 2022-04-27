@@ -32,14 +32,11 @@
     <section>
         <h2>Truncate Words Pipe</h2>
 
-        <p>{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' | truncateWords: 5 }}</p>
+        <p>{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' | truncateWords: 4 }}</p>
         <p>
-            {{
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                    | truncateWords: 7:'-'
-            }}
+            {{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' | truncateWords: 7:'-' }}
         </p>
-        <p>{{ 'Lorem ipsum dolor sit amet' | truncateWords: 12 }}</p>
+        <p>{{ 'Lorem ipsum dolor sit amet' | truncateWords: 15 }}</p>
     </section>
 
     <section>
