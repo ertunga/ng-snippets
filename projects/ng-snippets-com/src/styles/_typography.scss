@@ -1,29 +1,29 @@
 body {
-	font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-		Helvetica Neue, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
 }
 
 .prose {
-	max-width: unset;
+    max-width: unset;
 
-	a {
-		@apply no-underline cursor-pointer;
-	}
+    a {
+        @apply no-underline cursor-pointer;
+    }
 
-	pre {
-		@apply mb-12 mt-0 mx-0 rounded-lg shadow-lg text-base;
+    pre {
+        @apply mb-12 mt-0 mx-0 rounded-lg shadow-lg text-base;
 
-		@media screen and (max-width: 1024px) {
-			@apply text-sm;
-		}
-	}
+        @media screen and (max-width: 1024px) {
+            @apply text-sm;
+        }
+    }
 
-	ngs-code-block-with-header pre {
-		@apply rounded-t-none;
-	}
+    ngs-code-block-with-header pre {
+        @apply rounded-t-none;
+    }
 
-	p > code {
-		font-size: inherit;
-		font-weight: 600;
-	}
+    p > code {
+        font-size: inherit;
+        font-weight: 600;
+    }
 }

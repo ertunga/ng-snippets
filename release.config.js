@@ -1,4 +1,4 @@
 module.exports = {
-	branches: 'master',
-	pkgRoot: 'dist/ng-snippets'
+    branches: 'master',
+    pkgRoot: 'dist/ng-snippets'
 };

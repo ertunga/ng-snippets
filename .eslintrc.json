@@ -1,23 +1,23 @@
 {
-	"root": true,
-	"ignorePatterns": ["dist/**/*", "*.json", "*.scss", "*.md"],
-	"overrides": [
-		{
-			"files": ["projects/**/*.ts"],
-			"parserOptions": {
-				"project": ["tsconfig.json", "e2e/tsconfig.json"],
-				"createDefaultProgram": true
-			},
-			"extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates"],
-			"rules": {
-				"@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "", "style": "camelCase" }],
-				"@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "ngs", "style": "kebab-case" }]
-			}
-		},
-		{
-			"files": ["*.html"],
-			"extends": ["plugin:@angular-eslint/template/recommended"],
-			"rules": {}
-		}
-	]
+    "root": true,
+    "ignorePatterns": ["dist/**/*", "*.json", "*.scss", "*.md"],
+    "overrides": [
+        {
+            "files": ["projects/**/*.ts"],
+            "parserOptions": {
+                "project": ["tsconfig.json", "e2e/tsconfig.json"],
+                "createDefaultProgram": true
+            },
+            "extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates"],
+            "rules": {
+                "@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "", "style": "camelCase" }],
+                "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "ngs", "style": "kebab-case" }]
+            }
+        },
+        {
+            "files": ["*.html"],
+            "extends": ["plugin:@angular-eslint/template/recommended"],
+            "rules": {}
+        }
+    ]
 }

@@ -1,21 +1,21 @@
 main {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	max-width: 50rem;
-	margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 50rem;
+    margin: auto;
 
-	section {
-		padding: 1rem;
-		border-radius: 0.5rem;
-		background-color: #f3f4f5;
-	}
+    section {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #f3f4f5;
+    }
 }
 
 .box {
-	width: 8rem;
-	height: 8rem;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	background-color: #ef4444;
+    width: 8rem;
+    height: 8rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #ef4444;
 }

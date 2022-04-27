@@ -3,31 +3,31 @@ import { Component, Inject } from '@angular/core';
 import { snippets } from './data/snippets';
 
 @Component({
-	selector: 'ngs-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+    selector: 'ngs-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	snippets = snippets;
-	isOpened = false;
+    snippets = snippets;
+    isOpened = false;
 
-	constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor(@Inject(DOCUMENT) private document: Document) {}
 
-	toggleMenu(): void {
-		this.isOpened ? this.closeMenu() : this.openMenu();
-	}
+    toggleMenu(): void {
+        this.isOpened ? this.closeMenu() : this.openMenu();
+    }
 
-	private openMenu(): void {
-		if (!this.isOpened) {
-			this.isOpened = true;
-			this.document.body.classList.add('overflow-hidden');
-		}
-	}
+    private openMenu(): void {
+        if (!this.isOpened) {
+            this.isOpened = true;
+            this.document.body.classList.add('overflow-hidden');
+        }
+    }
 
-	closeMenu(): void {
-		if (this.isOpened) {
-			this.isOpened = false;
-			this.document.body.classList.remove('overflow-hidden');
-		}
-	}
+    closeMenu(): void {
+        if (this.isOpened) {
+            this.isOpened = false;
+            this.document.body.classList.remove('overflow-hidden');
+        }
+    }
 }

@@ -2,37 +2,37 @@ $header-height: 4rem;
 $content-margin-top: 3rem;
 
 header {
-	@apply flex justify-center sticky top-0 backdrop-filter backdrop-blur-lg border-b border-gray-200;
-	height: $header-height;
+    @apply flex justify-center sticky top-0 backdrop-filter backdrop-blur-lg border-b border-gray-200;
+    height: $header-height;
 
-	.icon-button {
-		@apply p-2 w-10 h-10 rounded-full hover:bg-gray-100;
-	}
+    .icon-button {
+        @apply p-2 w-10 h-10 rounded-full hover:bg-gray-100;
+    }
 }
 
 .content {
-	@apply flex;
+    @apply flex;
 
-	aside {
-		@apply w-72;
-		top: $header-height;
+    aside {
+        @apply w-72;
+        top: $header-height;
 
-		&.open {
-			@apply w-full block;
-		}
+        &.open {
+            @apply w-full block;
+        }
 
-		nav {
-			a {
-				@apply flex items-center p-1 text-gray-500 rounded-full hover:bg-gray-200;
+        nav {
+            a {
+                @apply flex items-center p-1 text-gray-500 rounded-full hover:bg-gray-200;
 
-				&:not(:first-child) {
-					@apply mt-2;
-				}
+                &:not(:first-child) {
+                    @apply mt-2;
+                }
 
-				&.active {
-					@apply text-gray-900 font-bold;
-				}
-			}
-		}
-	}
+                &.active {
+                    @apply text-gray-900 font-bold;
+                }
+            }
+        }
+    }
 }

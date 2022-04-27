@@ -14,25 +14,25 @@ import { createCustomElement } from '@angular/elements';
 import { CodeBlockWithHeaderComponent } from './web-component/code-block-with-header/code-block-with-header.component';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, SnippetComponent, NotFoundComponent, MarkdownPipe, TrustPipe, CodeBlockWithHeaderComponent],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule, HighlightModule],
-	providers: [
-		{
-			provide: HIGHLIGHT_OPTIONS,
-			useValue: {
-				coreLibraryLoader: () => import('highlight.js/lib/core'),
-				languages: {
-					typescript: () => import('highlight.js/lib/languages/typescript'),
-					xml: () => import('highlight.js/lib/languages/xml')
-				}
-			}
-		}
-	],
-	bootstrap: [AppComponent]
+    declarations: [AppComponent, HomeComponent, SnippetComponent, NotFoundComponent, MarkdownPipe, TrustPipe, CodeBlockWithHeaderComponent],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, HighlightModule],
+    providers: [
+        {
+            provide: HIGHLIGHT_OPTIONS,
+            useValue: {
+                coreLibraryLoader: () => import('highlight.js/lib/core'),
+                languages: {
+                    typescript: () => import('highlight.js/lib/languages/typescript'),
+                    xml: () => import('highlight.js/lib/languages/xml')
+                }
+            }
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
-	constructor(private injector: Injector) {
-		const codeBlockWithHeaderElement = createCustomElement(CodeBlockWithHeaderComponent, { injector });
-		customElements.define('ngs-code-block-with-header', codeBlockWithHeaderElement);
-	}
+    constructor(private injector: Injector) {
+        const codeBlockWithHeaderElement = createCustomElement(CodeBlockWithHeaderComponent, { injector });
+        customElements.define('ngs-code-block-with-header', codeBlockWithHeaderElement);
+    }
 }
