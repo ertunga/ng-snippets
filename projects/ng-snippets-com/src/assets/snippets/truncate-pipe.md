@@ -1,7 +1,7 @@
 # Truncate Pipe
 
-A pipe to truncate strings. Takes two parameters: `length` and `suffix`. 
-First parameter `length` is mandatory and it determines the length of the truncated text.
+A pipe to truncate strings. Takes two parameters: `truncationLength` and `suffix`.
+First parameter `truncationLength` is mandatory and it determines the length of the truncated text.
 Second parameter `suffix` is optional and when omitted the default value is `...`
 
 ## Usage
@@ -12,13 +12,13 @@ Use it in the component template
 
 ```
 {{ "Text to be truncated" | truncate: 17 }}
-{{ "Different suffix" | truncate: 14: '__' }} 
+{{ "Different suffix" | truncate: 14: '__' }}
 {{ "Short text" | truncate: 12 }}
 ```
 
 </ngs-code-block-with-header>
 
-Result: 
+Result:
 
 ```
 Text to be trunca...
@@ -34,19 +34,17 @@ Short text
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'truncate'
+    name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
-	transform(value: string, truncationLength: number, suffix: string = '...'): string {
-		if (truncationLength <= 0) {
-			throw new Error('Truncation length must be larger than 0');
-		}
+    transform(value: string, truncationLength: number, suffix: string = '...'): string {
+        if (truncationLength <= 0) {
+            throw new Error('Truncation length must be larger than 0');
+        }
 
-		return value.length > truncationLength ? value.substring(0, truncationLength) + suffix : value;
-	}
+        return value.length > truncationLength ? value.substring(0, truncationLength) + suffix : value;
+    }
 }
-
 ```
 
 </ngs-code-block-with-header>
-
