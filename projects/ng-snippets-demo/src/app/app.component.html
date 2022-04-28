@@ -44,4 +44,12 @@
 
         <div (clickOutside)="handleClickOutside($event)" class="box">Click outside and open console</div>
     </section>
+
+    <section>
+        <h2>Fallback Image Directive</h2>
+
+        <img src="http://broken-link-that-doesnt-work.com" fallbackImage="./assets/placeholder-avatar.png" alt="" />
+        <img src="http://broken-link-that-doesnt-work.com" fallbackImage="https://via.placeholder.com/200x200" alt="" />
+        <img src="https://picsum.photos/id/237/200/300" fallbackImage="https://via.placeholder.com/200x200" alt="" />
+    </section>
 </main>

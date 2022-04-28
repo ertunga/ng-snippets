@@ -1,8 +1,8 @@
 export const snippets = [
-    /*{
-		slug: 'fallback-src-directive',
-		title: 'Fallback Src Directive'
-	},*/
+    {
+        slug: 'fallback-image-directive',
+        title: 'Fallback Image Directive'
+    },
     {
         slug: 'join-pipe',
         title: 'Join Pipe'
