@@ -11,8 +11,8 @@ Use it in the component template
 <ngs-code-block-with-header>
 
 ```
-{{ 'Lorem ipsum dolor sit amet, consectetur' | truncateWords: 3 }}
-{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' | truncateWords: 6:'-' }}
+{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' | truncateWords: 4 }}
+{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' | truncateWords: 7:'-' }}
 {{ 'Lorem ipsum dolor sit amet' | truncateWords: 15 }}
 ```
 
@@ -21,8 +21,8 @@ Use it in the component template
 Result:
 
 ```
-Lorem ipsum dolor...
-Lorem ipsum dolor sit amet, consectetur-
+Lorem ipsum dolor sit...
+Lorem ipsum dolor sit amet, consectetur adipiscing-
 Lorem ipsum dolor sit amet
 ```
 
