@@ -1,6 +1,6 @@
 # Truncate Words Pipe
 
-Truncate strings based on number of words. Takes two parameters: `wordCount` and `suffix`.
+Truncate a text based on number of words. Takes two parameters: `wordCount` and `suffix`.
 First parameter `wordCount` is mandatory and it determines the number of words.
 Second parameter `suffix` is optional, default value is `...`
 

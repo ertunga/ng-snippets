@@ -1,6 +1,6 @@
 # Truncate Pipe
 
-A pipe to truncate strings. Takes two parameters: `truncationLength` and `suffix`.
+A pipe to truncate a text based on length. Takes two parameters: `truncationLength` and `suffix`.
 First parameter `truncationLength` is mandatory and it determines the length of the truncated text.
 Second parameter `suffix` is optional and when omitted the default value is `...`
 
