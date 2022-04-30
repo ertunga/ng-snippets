@@ -1,5 +1,9 @@
 export const snippets = [
     {
+        slug: 'theme-service',
+        title: 'Theme Service'
+    },
+    {
         slug: 'fallback-src-directive',
         title: 'Fallback Src Directive'
     },
@@ -14,10 +18,6 @@ export const snippets = [
     {
         slug: 'click-outside-directive',
         title: 'Click Outside Directive'
-    },
-    {
-        slug: 'theme-service',
-        title: 'Theme Service'
     },
     {
         slug: 'truncate-pipe',
