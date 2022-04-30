@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CounterService } from '../../../ng-snippets/counter';
-import { ThemeService } from '../../../ng-snippets/theme-service';
+import { ThemeService } from '../../../ng-snippets/theme';
 
 @Component({
     selector: 'ngs-root',
