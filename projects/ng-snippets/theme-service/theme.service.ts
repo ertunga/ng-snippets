@@ -9,12 +9,10 @@ export class ThemeService {
     private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
     public activeTheme$ = this.activeThemeSubject.asObservable();
 
+    constructor(@Inject(DOCUMENT) private document: Document) {}
+
     get activeTheme(): string | undefined {
         return this.activeThemeSubject.getValue();
-    }
-
-    constructor(@Inject(DOCUMENT) private document: Document) {
-        this.set('light');
     }
 
     set(theme: string): void {

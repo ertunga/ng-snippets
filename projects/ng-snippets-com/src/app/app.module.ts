@@ -23,7 +23,8 @@ import { CodeBlockWithHeaderComponent } from './web-component/code-block-with-he
                 coreLibraryLoader: () => import('highlight.js/lib/core'),
                 languages: {
                     typescript: () => import('highlight.js/lib/languages/typescript'),
-                    xml: () => import('highlight.js/lib/languages/xml')
+                    xml: () => import('highlight.js/lib/languages/xml'),
+                    css: () => import('highlight.js/lib/languages/css')
                 }
             }
         }

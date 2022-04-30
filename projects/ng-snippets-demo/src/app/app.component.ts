@@ -8,7 +8,9 @@ import { ThemeService } from '../../../ng-snippets/theme-service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    constructor(public counterService: CounterService, public themeService: ThemeService) {}
+    constructor(public counterService: CounterService, public themeService: ThemeService) {
+        this.themeService.set('light');
+    }
 
     handleClickOutside(event: Event): void {
         console.log('clicked outside', event);
