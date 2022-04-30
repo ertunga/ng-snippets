@@ -1,63 +1,81 @@
 # Theme Service
 
-A great service to theme your app.
-
-<ngs-code-block-with-header file-name="theme.service.ts">
-
-```typescript
-export enum Theme {
-	LIGHT = 'light',
-	ELEGANT = 'elegant',
-	DARK = 'dark'
-}
-
-@Injectable({
-	providedIn: 'root'
-})
-export class ThemeService {
-
-	private activeThemeSubject = new BehaviorSubject<Theme | undefined>(undefined);
-	public activeTheme$ = this.activeThemeSubject.asObservable();
-	
-	get activeTheme(): Theme | undefined {
-		return this.activeThemeSubject.getValue();
-	}
-
-	constructor(@Inject(DOCUMENT) private document: Document) {
-		this.set(Theme.LIGHT);
-	}
-
-	set(theme: Theme): void {
-		if (theme === this.activeTheme) {
-			return;
-		}
-
-		this.activeThemeSubject.next(theme);
-
-		this.document.body.classList.forEach((token: string) => {
-			if (token.endsWith('-theme')) {
-				this.document.body.classList.remove(token);
-			}
-		});
-		this.document.body.classList.add(theme + '-theme');
-	}
-}
-```
-
-</ngs-code-block-with-header>
+TODO
 
 ## Usage
 
-This is how you use it.
+TODO
 
 <ngs-code-block-with-header>
 
 ```html
-<button (click)="themeService.set(Theme.LIGHT)">Light theme</button>
-<button (click)="themeService.set(Theme.ELEGANT)">Elegant theme</button>
-<button (click)="themeService.set(Theme.DARK)">Dark theme</button>
+<p>Current theme: {{ themeService.activeTheme$ | async }}</p>
 
-<p>Active theme: {{ themeService.activeTheme }}</p>
+<button (click)="themeService.set('light')">Light</button>
+<button (click)="themeService.set('dark')">Dark</button>
+```
+
+</ngs-code-block-with-header>
+
+TODO
+
+```
+.light-theme {
+    --primary: #38bdf8;
+    --accent: #f472b6;
+    --background-color-1: #fff;
+    --background-color-2: #f3f4f5;
+    --color: #0f172a;
+}
+
+.dark-theme {
+    --primary: #38bdf8;
+    --accent: #5b21b6;
+    --background-color-1: #0f172a;
+    --background-color-2: #334155;
+    --color: #fff;
+}
+```
+
+## Source
+
+<ngs-code-block-with-header file-name="theme.service.ts">
+
+```typescript
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class ThemeService {
+    private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
+    public activeTheme$ = this.activeThemeSubject.asObservable();
+
+    get activeTheme(): string | undefined {
+        return this.activeThemeSubject.getValue();
+    }
+
+    constructor(@Inject(DOCUMENT) private document: Document) {
+        this.set('light');
+    }
+
+    set(theme: string): void {
+        if (theme === this.activeTheme) {
+            return;
+        }
+
+        this.activeThemeSubject.next(theme);
+
+        this.document.body.classList.forEach((token: string) => {
+            if (token.endsWith('-theme')) {
+                this.document.body.classList.remove(token);
+            }
+        });
+        this.document.body.classList.add(theme + '-theme');
+    }
+}
 ```
 
 </ngs-code-block-with-header>
