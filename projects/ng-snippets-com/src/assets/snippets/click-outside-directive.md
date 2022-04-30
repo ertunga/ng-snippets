@@ -10,7 +10,7 @@ One common scenario would be detecting clicks outside of a dropdown, modal or a 
 <ngs-code-block-with-header>
 
 ```html
-<div (clickOutside)="close($event)" class="dropdown">Dropdown Content</div>
+<div (clickOutside)="close($event)">Dropdown Content</div>
 ```
 
 </ngs-code-block-with-header>
@@ -23,19 +23,19 @@ One common scenario would be detecting clicks outside of a dropdown, modal or a 
 import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
-	selector: '[clickOutside]'
+    selector: '[clickOutside]'
 })
 export class ClickOutsideDirective {
-	@Output() clickOutside = new EventEmitter<Event>();
+    @Output() clickOutside = new EventEmitter<Event>();
 
-	constructor(private elementRef: ElementRef) {}
+    constructor(private elementRef: ElementRef) {}
 
-	@HostListener('document:click', ['$event'])
-	handleClick(event: Event): void {
-		if (!this.elementRef.nativeElement.contains(event.target)) {
-			this.clickOutside.emit(event);
-		}
-	}
+    @HostListener('document:click', ['$event'])
+    handleClick(event: Event): void {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+            this.clickOutside.emit(event);
+        }
+    }
 }
 ```
 
