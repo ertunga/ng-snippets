@@ -52,4 +52,13 @@
         <img src="http://broken-link-that-doesnt-work" fallbackSrc="https://via.placeholder.com/200x200" alt="" />
         <img src="https://picsum.photos/id/237/200/300" fallbackSrc="https://via.placeholder.com/200x200" alt="" />
     </section>
+
+    <section>
+        <h2>Theme Service</h2>
+
+        <p>Current theme: {{ themeService.activeTheme$ | async }}</p>
+        <p>Current theme: {{ themeService.activeTheme }}</p>
+        <button (click)="themeService.set('light')">Light</button>
+        <button (click)="themeService.set('dark')">Dark</button>
+    </section>
 </main>

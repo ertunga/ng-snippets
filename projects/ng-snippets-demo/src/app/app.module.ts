@@ -8,10 +8,20 @@ import { TruncateModule } from '../../../ng-snippets/truncate';
 import { TruncateWordsModule } from '../../../ng-snippets/truncate-words';
 import { ClickOutsideModule } from '../../../ng-snippets/click-outside';
 import { FallbackSrcModule } from '../../../ng-snippets/fallback-src';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, JoinModule, TruncateModule, ClickOutsideModule, TruncateWordsModule, FallbackSrcModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CommonModule,
+        JoinModule,
+        TruncateModule,
+        ClickOutsideModule,
+        TruncateWordsModule,
+        FallbackSrcModule
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
