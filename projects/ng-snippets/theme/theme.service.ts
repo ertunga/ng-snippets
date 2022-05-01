@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ThemeService {
     private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
-    public activeTheme$ = this.activeThemeSubject.asObservable();
+    activeTheme$ = this.activeThemeSubject.asObservable();
 
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
@@ -22,11 +22,11 @@ export class ThemeService {
 
         this.activeThemeSubject.next(theme);
 
-        this.document.body.classList.forEach((token: string) => {
+        this.document.documentElement.classList.forEach((token: string) => {
             if (token.endsWith('-theme')) {
-                this.document.body.classList.remove(token);
+                this.document.documentElement.classList.remove(token);
             }
         });
-        this.document.body.classList.add(theme + '-theme');
+        this.document.documentElement.classList.add(theme + '-theme');
     }
 }

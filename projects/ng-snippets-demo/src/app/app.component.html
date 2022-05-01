@@ -58,6 +58,7 @@
 
         <p>Current theme: {{ themeService.activeTheme$ | async }}</p>
         <button (click)="themeService.set('light')">Light</button>
+        <button (click)="themeService.set('dimmed')">Dimmed</button>
         <button (click)="themeService.set('dark')">Dark</button>
     </section>
 </main>

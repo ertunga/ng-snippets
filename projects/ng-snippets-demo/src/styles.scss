@@ -14,10 +14,18 @@ body {
     --color: #0f172a;
 }
 
+.dimmed-theme {
+    --primary: #38bdf8;
+    --accent: #e11d48;
+    --background-color-1: #4b5563;
+    --background-color-2: #9ca3af;
+    --color: #fff;
+}
+
 .dark-theme {
     --primary: #38bdf8;
     --accent: #5b21b6;
     --background-color-1: #0f172a;
     --background-color-2: #334155;
-    --color: #fff;
+    --color: #f9fafb;
 }
