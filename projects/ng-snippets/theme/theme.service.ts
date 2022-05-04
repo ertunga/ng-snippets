@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ThemeConfig, THEME_CONFIG, Theme } from './tokens';
 
 @Injectable({
     providedIn: 'root'
@@ -8,8 +9,15 @@ import { BehaviorSubject } from 'rxjs';
 export class ThemeService {
     private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
     activeTheme$ = this.activeThemeSubject.asObservable();
+    themeNames: string[] = [];
+    themeClassNames: string[] = [];
 
-    constructor(@Inject(DOCUMENT) private document: Document) {}
+    constructor(@Inject(DOCUMENT) private document: Document, @Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
+        this.themeConfig.themes.forEach((theme) => {
+            this.themeNames.push(theme.name);
+            this.themeClassNames.push(theme.className);
+        });
+    }
 
     get activeTheme(): string | undefined {
         return this.activeThemeSubject.getValue();
@@ -20,13 +28,13 @@ export class ThemeService {
             return;
         }
 
-        this.activeThemeSubject.next(theme);
+        const what = this.themeConfig.themes.find((registeredTheme: Theme) => registeredTheme.name === theme);
 
-        this.document.documentElement.classList.forEach((token: string) => {
-            if (token.endsWith('-theme')) {
-                this.document.documentElement.classList.remove(token);
-            }
-        });
-        this.document.documentElement.classList.add(theme + '-theme');
+        if (what) {
+            this.activeThemeSubject.next(what.name);
+
+            this.document.documentElement.classList.remove(...this.themeClassNames);
+            this.document.documentElement.classList.add(what.className);
+        }
     }
 }
