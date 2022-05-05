@@ -7,14 +7,20 @@ export interface Theme {
 
 export interface ThemeConfig {
     themes: Theme[];
-    options?: any;
+    attribute: string;
+    selector: string;
 }
+
+const defaultConfig: Partial<ThemeConfig> = {
+    attribute: 'class',
+    selector: 'html'
+};
 
 export const THEME_CONFIG = new InjectionToken<ThemeConfig>('THEME_CONFIG');
 
-export function provideThemeConfig(themeConfig: ThemeConfig): Provider {
+export function provideThemeConfig(config: Partial<ThemeConfig>): Provider {
     return {
         provide: THEME_CONFIG,
-        useValue: themeConfig
+        useValue: { ...defaultConfig, ...config }
     };
 }

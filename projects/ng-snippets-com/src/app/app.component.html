@@ -1,4 +1,4 @@
-<div class="flex flex-col min-h-screen prose">
+<div class="flex flex-col min-h-screen prose dark:prose-invert">
     <header>
         <div class="flex items-center justify-between w-full px-6">
             <a routerLink="/" (click)="closeMenu()" class="flex items-center">
@@ -70,7 +70,10 @@
     </header>
 
     <div class="content">
-        <aside [class.open]="isOpened" class="hidden px-6 pt-12 flex-none lg:block h-screen fixed overflow-y-auto bg-white">
+        <aside
+            [class.open]="isOpened"
+            class="hidden px-6 pt-12 flex-none lg:block h-screen fixed overflow-y-auto bg-white dark:bg-gray-900"
+        >
             <nav>
                 <a
                     *ngFor="let snippet of snippets"

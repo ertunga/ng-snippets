@@ -13,7 +13,7 @@ export class ThemeService {
     themeClassNames: string[] = [];
 
     constructor(@Inject(DOCUMENT) private document: Document, @Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
-        this.themeConfig.themes.forEach((theme) => {
+        this.themeConfig.themes.forEach((theme: Theme) => {
             this.themeNames.push(theme.name);
             this.themeClassNames.push(theme.className);
         });
@@ -28,13 +28,13 @@ export class ThemeService {
             return;
         }
 
-        const what = this.themeConfig.themes.find((registeredTheme: Theme) => registeredTheme.name === theme);
+        const selectedTheme = this.themeConfig.themes.find((registeredTheme: Theme) => registeredTheme.name === theme);
 
-        if (what) {
-            this.activeThemeSubject.next(what.name);
+        if (selectedTheme) {
+            this.activeThemeSubject.next(selectedTheme.name);
 
             this.document.documentElement.classList.remove(...this.themeClassNames);
-            this.document.documentElement.classList.add(what.className);
+            this.document.documentElement.classList.add(selectedTheme.className);
         }
     }
 }
