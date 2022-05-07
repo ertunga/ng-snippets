@@ -1,7 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ThemeConfig, THEME_CONFIG, Theme } from './tokens';
+import { THEME_CONFIG } from './token';
+import { ThemeConfig } from './model/theme.model';
 
 @Injectable({
     providedIn: 'root'
@@ -10,12 +11,12 @@ export class ThemeService {
     private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
     activeTheme$ = this.activeThemeSubject.asObservable();
     themeNames: string[] = [];
-    themeClassNames: string[] = [];
+    themeValues: string[] = [];
 
     constructor(@Inject(DOCUMENT) private document: Document, @Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
-        this.themeConfig.themes.forEach((theme: Theme) => {
+        this.themeConfig.themes.forEach((theme) => {
             this.themeNames.push(theme.name);
-            this.themeClassNames.push(theme.className);
+            this.themeValues.push(theme.value);
         });
     }
 
@@ -28,13 +29,23 @@ export class ThemeService {
             return;
         }
 
-        const selectedTheme = this.themeConfig.themes.find((registeredTheme: Theme) => registeredTheme.name === theme);
+        const element = this.document.querySelector(this.themeConfig.selector);
+        if (!element) {
+            return;
+        }
 
-        if (selectedTheme) {
-            this.activeThemeSubject.next(selectedTheme.name);
+        const selectedTheme = this.themeConfig.themes.find((registeredTheme) => registeredTheme.name === theme);
+        if (!selectedTheme) {
+            return;
+        }
 
-            this.document.documentElement.classList.remove(...this.themeClassNames);
-            this.document.documentElement.classList.add(selectedTheme.className);
+        this.activeThemeSubject.next(selectedTheme.name);
+
+        if (this.themeConfig.attribute === 'class') {
+            element.classList.remove(...this.themeValues);
+            element.classList.add(selectedTheme.value);
+        } else {
+            element.setAttribute(this.themeConfig.attribute, selectedTheme.value);
         }
     }
 }

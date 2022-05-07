@@ -12,7 +12,7 @@ import { TrustPipe } from './pipe/trust.pipe';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { createCustomElement } from '@angular/elements';
 import { CodeBlockWithHeaderComponent } from './web-component/code-block-with-header/code-block-with-header.component';
-import { provideThemeConfig } from '../../../ng-snippets/theme/tokens';
+import { provideThemeConfig } from '../../../ng-snippets/theme';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, SnippetComponent, NotFoundComponent, MarkdownPipe, TrustPipe, CodeBlockWithHeaderComponent],
@@ -31,8 +31,8 @@ import { provideThemeConfig } from '../../../ng-snippets/theme/tokens';
         },
         provideThemeConfig({
             themes: [
-                { name: 'light', className: 'light' },
-                { name: 'dark', className: 'dark' }
+                { name: 'light', value: 'light' },
+                { name: 'dark', value: 'dark' }
             ]
         })
     ],

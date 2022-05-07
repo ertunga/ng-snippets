@@ -8,7 +8,7 @@ import { TruncateModule } from '../../../ng-snippets/truncate';
 import { TruncateWordsModule } from '../../../ng-snippets/truncate-words';
 import { ClickOutsideModule } from '../../../ng-snippets/click-outside';
 import { FallbackSrcModule } from '../../../ng-snippets/fallback-src';
-import { provideThemeConfig } from '../../../ng-snippets/theme/tokens';
+import { provideThemeConfig } from '../../../ng-snippets/theme';
 import { Theme } from './theme';
 
 @NgModule({
@@ -19,15 +19,15 @@ import { Theme } from './theme';
             themes: [
                 {
                     name: Theme.LIGHT,
-                    className: 'light-theme'
+                    value: 'light-theme'
                 },
                 {
                     name: Theme.DIMMED,
-                    className: 'dimmed-theme'
+                    value: 'dimmed-theme'
                 },
                 {
                     name: Theme.DARK,
-                    className: 'dark-theme'
+                    value: 'dark-theme'
                 }
             ]
         })

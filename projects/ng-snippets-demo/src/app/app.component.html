@@ -57,8 +57,8 @@
         <h2>Theme Service</h2>
 
         <p>Current theme: {{ themeService.activeTheme$ | async }}</p>
-        <button (click)="themeService.set(Theme.LIGHT)">Light</button>
-        <button (click)="themeService.set(Theme.DIMMED)">Dimmed</button>
-        <button (click)="themeService.set(Theme.DARK)">Dark</button>
+        <button *ngFor="let theme of themeService.themeNames" (click)="themeService.set(theme)">
+            {{ theme | titlecase }}
+        </button>
     </section>
 </main>

@@ -1,15 +1,5 @@
 import { InjectionToken, Provider } from '@angular/core';
-
-export interface Theme {
-    name: string;
-    className: string;
-}
-
-export interface ThemeConfig {
-    themes: Theme[];
-    attribute: string;
-    selector: string;
-}
+import { ThemeConfig } from './model/theme.model';
 
 const defaultConfig: Partial<ThemeConfig> = {
     attribute: 'class',
