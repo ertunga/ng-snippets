@@ -1,8 +1,7 @@
-import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { THEME_CONFIG } from './token';
-import { ThemeConfig } from './model/theme.model';
+import { ThemeConfig } from './theme.model';
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +12,7 @@ export class ThemeService {
     themeNames: string[] = [];
     themeValues: string[] = [];
 
-    constructor(@Inject(DOCUMENT) private document: Document, @Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
+    constructor(@Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
         this.themeConfig.themes.forEach((theme) => {
             this.themeNames.push(theme.name);
             this.themeValues.push(theme.value);
@@ -29,7 +28,7 @@ export class ThemeService {
             return;
         }
 
-        const element = this.document.querySelector(this.themeConfig.selector);
+        const element = document.querySelector(this.themeConfig.selector);
         if (!element) {
             return;
         }

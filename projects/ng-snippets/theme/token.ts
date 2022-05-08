@@ -1,5 +1,5 @@
 import { InjectionToken, Provider } from '@angular/core';
-import { ThemeConfig } from './model/theme.model';
+import { ThemeConfig } from './theme.model';
 
 const defaultConfig: Partial<ThemeConfig> = {
     attribute: 'class',

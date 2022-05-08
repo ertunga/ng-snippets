@@ -57,8 +57,10 @@
         <h2>Theme Service</h2>
 
         <p>Current theme: {{ themeService.activeTheme$ | async }}</p>
+
         <button *ngFor="let theme of themeService.themeNames" (click)="themeService.set(theme)">
             {{ theme | titlecase }}
         </button>
+        <button (click)="systemPreference = true">System Preference</button>
     </section>
 </main>
