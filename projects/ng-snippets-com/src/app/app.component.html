@@ -7,7 +7,7 @@
             </a>
 
             <div class="flex">
-                <button (click)="toggleTheme()" class="icon-button">
+                <button (click)="toggleTheme()" *ngIf="false" class="icon-button">
                     <!-- Sun icon -->
                     <svg
                         *ngIf="themeService.activeTheme === 'dark'"

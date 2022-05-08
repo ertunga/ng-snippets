@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-    private readonly themeKey = 'ngs-theme';
+    private readonly themeStorageKey = 'ngs-theme';
     private darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     private themeSub = Subscription.EMPTY;
     systemPreference = false;
@@ -21,15 +21,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         if (!this.systemPreference) {
-            const theme = localStorage.getItem(this.themeKey);
+            const theme = localStorage.getItem(this.themeStorageKey);
             this.themeService.set(theme ? theme : Theme.LIGHT);
 
             this.themeSub = this.themeService.activeTheme$
                 .pipe(filter(Boolean))
-                .subscribe((theme) => localStorage.setItem(this.themeKey, theme));
+                .subscribe((theme) => localStorage.setItem(this.themeStorageKey, theme));
         }
 
-        this.darkModeMediaQuery.addEventListener('change', (event) => {
+        this.darkModeMediaQuery.addEventListener('change', (event: MediaQueryListEvent) => {
             if (this.systemPreference) {
                 this.themeService.set(event.matches ? Theme.DARK : Theme.LIGHT);
             }

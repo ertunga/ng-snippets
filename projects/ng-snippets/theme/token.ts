@@ -6,7 +6,7 @@ const defaultConfig: Partial<ThemeConfig> = {
     selector: 'html'
 };
 
-export const THEME_CONFIG = new InjectionToken<ThemeConfig>('THEME_CONFIG');
+export const THEME_CONFIG = new InjectionToken<ThemeConfig>('NGS_THEME_CONFIG');
 
 export function provideThemeConfig(config: Partial<ThemeConfig>): Provider {
     return {
