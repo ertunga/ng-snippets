@@ -1,23 +1,30 @@
 # Theme Service
 
-TODO
+Provide themes for your application by toggling classes or attributes.
 
 ## Usage
 
-TODO
+Configure the service using `provideThemeConfig` method in app module. By default, this will set
+'light-theme' or 'dark-theme' CSS class for the `html` element.
 
-<ngs-code-block-with-header>
+<ngs-code-block-with-header file-name="app.module.ts">
 
-```html
-<p>Current theme: {{ themeService.activeTheme$ | async }}</p>
-
-<button (click)="themeService.set('light')">Light</button>
-<button (click)="themeService.set('dark')">Dark</button>
+```
+providers: [
+    provideThemeConfig({
+        themes: [
+            { name: 'light', value: 'light-theme' },
+            { name: 'dark', value: 'dark-theme' }
+        ]
+    })
+]
 ```
 
 </ngs-code-block-with-header>
 
-TODO
+Create CSS classes for the configured themes, preferably in the global CSS file.
+
+<ngs-code-block-with-header>
 
 ```css
 .light-theme {
@@ -33,32 +40,54 @@ TODO
     --accent: #5b21b6;
     --background-color-1: #0f172a;
     --background-color-2: #334155;
-    --color: #fff;
+    --color: #f9fafb;
 }
 ```
+
+</ngs-code-block-with-header>
+
+After injecting `ThemeService`, you can start using it. Here is an example in the
+component's template.
+
+<ngs-code-block-with-header>
+
+```html
+<p>Current theme: {{ themeService.activeTheme$ | async }}</p>
+
+<button (click)="themeService.set('light')">Light</button>
+<button (click)="themeService.set('dark')">Dark</button>
+```
+
+</ngs-code-block-with-header>
 
 ## Source
 
 <ngs-code-block-with-header file-name="theme.service.ts">
 
 ```typescript
-import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { THEME_CONFIG } from './token';
+import { ThemeConfig } from './theme.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ThemeService {
     private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
-    public activeTheme$ = this.activeThemeSubject.asObservable();
+    activeTheme$ = this.activeThemeSubject.asObservable();
+    themeNames: string[] = [];
+    themeValues: string[] = [];
+
+    constructor(@Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
+        this.themeConfig.themes.forEach((theme) => {
+            this.themeNames.push(theme.name);
+            this.themeValues.push(theme.value);
+        });
+    }
 
     get activeTheme(): string | undefined {
         return this.activeThemeSubject.getValue();
-    }
-
-    constructor(@Inject(DOCUMENT) private document: Document) {
-        this.set('light');
     }
 
     set(theme: string): void {
@@ -66,14 +95,24 @@ export class ThemeService {
             return;
         }
 
-        this.activeThemeSubject.next(theme);
+        const element = document.querySelector(this.themeConfig.selector);
+        if (!element) {
+            return;
+        }
 
-        this.document.body.classList.forEach((token: string) => {
-            if (token.endsWith('-theme')) {
-                this.document.body.classList.remove(token);
-            }
-        });
-        this.document.body.classList.add(theme + '-theme');
+        const selectedTheme = this.themeConfig.themes.find((registeredTheme) => registeredTheme.name === theme);
+        if (!selectedTheme) {
+            return;
+        }
+
+        this.activeThemeSubject.next(selectedTheme.name);
+
+        if (this.themeConfig.attribute === 'class') {
+            element.classList.remove(...this.themeValues);
+            element.classList.add(selectedTheme.value);
+        } else {
+            element.setAttribute(this.themeConfig.attribute, selectedTheme.value);
+        }
     }
 }
 ```
