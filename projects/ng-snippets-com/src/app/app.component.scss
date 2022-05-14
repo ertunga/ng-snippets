@@ -19,7 +19,7 @@ header {
 
         nav {
             a {
-                @apply flex items-center p-1 text-gray-500 rounded-full hover:bg-gray-200;
+                @apply flex items-center p-1 text-gray-500 rounded-full hover:text-gray-900 hover:bg-gray-200 active:bg-gray-300;
 
                 &:not(:first-child) {
                     @apply mt-2;
@@ -27,6 +27,14 @@ header {
 
                 &.active {
                     @apply text-gray-900 font-bold;
+
+                    .orb {
+                        @apply bg-red-700;
+                    }
+                }
+
+                .orb {
+                    @apply inline-block w-6 h-6 mr-3 rounded-full border-2 border-red-700;
                 }
             }
         }
