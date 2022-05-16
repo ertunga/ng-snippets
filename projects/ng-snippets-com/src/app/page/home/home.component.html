@@ -13,7 +13,7 @@
 
 <h2>Latest additions</h2>
 <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
-    <a *ngFor="let snippet of snippets" [routerLink]="'/snippet/' + snippet.slug" class="card flex-col">
+    <a *ngFor="let snippet of snippets | slice: 0:6" [routerLink]="'/snippet/' + snippet.slug" class="card flex-col">
         <h3>{{ snippet.title }}</h3>
         <!-- Arrow right icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
