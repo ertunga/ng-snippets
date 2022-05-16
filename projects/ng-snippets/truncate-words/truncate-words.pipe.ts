@@ -4,7 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'truncateWords'
 })
 export class TruncateWordsPipe implements PipeTransform {
-    transform(value: string, truncationLength: number, suffix: string = '...'): string {
-        return value.split(' ').length > truncationLength ? value.split(' ').slice(0, truncationLength).join(' ') + suffix : value;
+    transform(value: string, wordCount: number, suffix: string = '...'): string {
+        const words = value.split(' ');
+        return words.length > wordCount ? words.slice(0, wordCount).join(' ') + suffix : value;
     }
 }
