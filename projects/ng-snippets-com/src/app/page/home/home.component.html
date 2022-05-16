@@ -4,6 +4,8 @@
     project. Jump right into it by selecting a snippet from the menu.
 </p>
 
+<p>All snippets are structured to allow tree-shaking. This means only the snippets you use will be included in your bundle.</p>
+
 <h2>Installation</h2>
 <ngs-code-block-with-header>
     <pre><code>npm i ng-snippets</code></pre>
@@ -13,7 +15,6 @@
 <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
     <a *ngFor="let snippet of snippets" [routerLink]="'/snippet/' + snippet.slug" class="card flex-col">
         <h3>{{ snippet.title }}</h3>
-        <!-- <p class="text-gray-700">snippet category here</p> -->
         <!-- Arrow right icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
