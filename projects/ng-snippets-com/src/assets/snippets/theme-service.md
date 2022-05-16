@@ -4,8 +4,8 @@ Provide themes for your application by toggling classes or attributes.
 
 ## Usage
 
-Configure the service using `provideThemeConfig` method in app module. By default, this will set
-'light-theme' or 'dark-theme' CSS class for the `html` element.
+Configure the service using `provideThemeConfig` method in app module. Here is an example configuration
+that will set 'light-theme' or 'dark-theme' CSS class for light and dark themes. By default, `<html>` is the target element.
 
 <ngs-code-block-with-header file-name="app.module.ts">
 
@@ -23,8 +23,9 @@ providers: [
 </ngs-code-block-with-header>
 
 Create CSS classes for the configured themes, preferably in the global CSS file.
+If you are using SCSS that would be the `styles.scss` under src.
 
-<ngs-code-block-with-header>
+<ngs-code-block-with-header file-name="styles.scss">
 
 ```css
 .light-theme {
