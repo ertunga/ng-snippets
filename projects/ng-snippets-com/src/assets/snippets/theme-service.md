@@ -22,6 +22,16 @@ providers: [
 
 </ngs-code-block-with-header>
 
+`provideThemeConfig` accepts `ThemeConfig`. By default, value for attribute and selector is 'class' and 'html' respectively.
+
+```typescript
+export interface ThemeConfig {
+    themes: { name: string; value: string }[];
+    attribute: string;
+    selector: 'html' | 'body';
+}
+```
+
 Create CSS classes for the configured themes, preferably in the global CSS file.
 If you are using SCSS that would be the `styles.scss` under src.
 
