@@ -1,6 +1,6 @@
 # Join Pipe
 
-A pipe to join items in an array with a separator. 
+A pipe to join items in an array with a separator.
 It has one optional parameter, `separator`, to be used as a separator between array items.
 If omitted, the default value is a comma followed by an empty space `, `
 
@@ -18,7 +18,7 @@ Use it in the component template
 
 </ngs-code-block-with-header>
 
-Result: 
+Result:
 
 ```
 item1, item2, item3
@@ -34,15 +34,14 @@ item1 > item2 > item3
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'join'
+    name: 'join',
+    pure: false
 })
 export class JoinPipe implements PipeTransform {
-	transform(array: unknown[], separator: string = ', '): string {
-		return array.join(separator);
-	}
+    transform(array: any[], separator: string = ', '): string {
+        return array.join(separator);
+    }
 }
-
 ```
 
-</ngs-code-block-with-header> 
-
+</ngs-code-block-with-header>
