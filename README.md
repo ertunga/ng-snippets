@@ -11,12 +11,21 @@
 <br/>
 
 A collection of essential Angular services, directives, pipes and other tools to prototype and develop quickly.
-Easily install into your project.
-
-```npm i ng-snippets```
-
-<a href="https://ngsnippets.com"><strong>ngsnippets.com</strong></a>
 
 <br/>
 
 </div>
+
+## 📦 Install
+
+```bash
+npm i ng-snippets
+```
+
+## 📕 Docs
+
+<a href="https://ngsnippets.com"><strong>ngsnippets.com</strong></a>
+
+## 📄 License
+
+[MIT License](https://github.com/ertunga/ng-snippets/blob/master/LICENSE)
