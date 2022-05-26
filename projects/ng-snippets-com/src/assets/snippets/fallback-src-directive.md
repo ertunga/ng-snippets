@@ -16,31 +16,4 @@ You can provide a fallback image from the assets folder, or you can provide any 
 
 ## Source
 
-<ngs-code-block-with-header file-name="fallback-src.directive.ts">
-
-```typescript
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
-
-@Directive({
-    selector: 'img[fallbackSrc]'
-})
-export class FallbackSrcDirective {
-    @Input() fallbackSrc: string | undefined;
-
-    constructor(private elementRef: ElementRef) {}
-
-    @HostListener('error')
-    setFallbackSrc(): void {
-        if (!this.fallbackSrc) {
-            throw new Error(
-                'fallbackSrc directive requires a value. Example: <img src="https://broken-link-that-doesnt-work" fallbackSrc="./assets/placeholder.svg" alt="...">'
-            );
-        }
-
-        const imageElement = this.elementRef.nativeElement as HTMLImageElement;
-        imageElement.src = this.fallbackSrc;
-    }
-}
-```
-
-</ngs-code-block-with-header>
+<a href="https://github.com/ertunga/ng-snippets/blob/master/projects/ng-snippets/fallback-src/fallback-src.directive.ts" target="_blank">Source</a>

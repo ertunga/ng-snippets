@@ -28,20 +28,4 @@ Lorem ipsum dolor sit amet
 
 ## Source
 
-<ngs-code-block-with-header file-name="truncate-words.pipe.ts">
-
-```typescript
-import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({
-    name: 'truncateWords'
-})
-export class TruncateWordsPipe implements PipeTransform {
-    transform(value: string, wordCount: number, suffix: string = '...'): string {
-        const words = value.split(' ');
-        return words.length > wordCount ? words.slice(0, wordCount).join(' ') + suffix : value;
-    }
-}
-```
-
-</ngs-code-block-with-header>
+<a href="https://github.com/ertunga/ng-snippets/blob/master/projects/ng-snippets/truncate-words/truncate-words.pipe.ts" target="_blank">Source</a>

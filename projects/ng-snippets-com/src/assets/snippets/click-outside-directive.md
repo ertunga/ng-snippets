@@ -17,26 +17,4 @@ One common scenario would be detecting clicks outside of a dropdown, modal or a 
 
 ## Source
 
-<ngs-code-block-with-header file-name="click-outside.directive.ts">
-
-```typescript
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
-
-@Directive({
-    selector: '[clickOutside]'
-})
-export class ClickOutsideDirective {
-    @Output() clickOutside = new EventEmitter<Event>();
-
-    constructor(private elementRef: ElementRef) {}
-
-    @HostListener('document:click', ['$event'])
-    handleClick(event: Event): void {
-        if (!this.elementRef.nativeElement.contains(event.target)) {
-            this.clickOutside.emit(event);
-        }
-    }
-}
-```
-
-</ngs-code-block-with-header>
+<a href="https://github.com/ertunga/ng-snippets/blob/master/projects/ng-snippets/click-outside/click-outside.directive.ts" target="_blank">Source</a>

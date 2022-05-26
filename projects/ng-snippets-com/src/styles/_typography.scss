@@ -10,6 +10,10 @@ body {
         @apply no-underline cursor-pointer;
     }
 
+    ngs-snippet a {
+        @apply text-blue-600 underline decoration-inherit underline-offset-2 hover:text-gray-900;
+    }
+
     pre {
         @apply mb-12 mt-0 mx-0 rounded-lg shadow-lg text-base;
 

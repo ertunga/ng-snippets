@@ -28,20 +28,4 @@ item1 > item2 > item3
 
 ## Source
 
-<ngs-code-block-with-header file-name="join.pipe.ts">
-
-```typescript
-import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({
-    name: 'join',
-    pure: false
-})
-export class JoinPipe implements PipeTransform {
-    transform(array: any[], separator: string = ', '): string {
-        return array.join(separator);
-    }
-}
-```
-
-</ngs-code-block-with-header>
+<a href="https://github.com/ertunga/ng-snippets/blob/master/projects/ng-snippets/join/join.pipe.ts" target="_blank">Source</a>

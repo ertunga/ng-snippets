@@ -41,39 +41,4 @@ You can use the service in the component's `.ts` file and in its template.
 
 ## Source
 
-<ngs-code-block-with-header file-name="counter.service.ts">
-
-```typescript
-import { Injectable } from '@angular/core';
-
-@Injectable({
-	providedIn: 'root'
-})
-export class CounterService {
-	private _count = 0;
-
-	increase(delta = 1): void {
-		this._count += delta;
-	}
-
-	decrease(delta = 1): void {
-		this._count -= delta;
-	}
-
-	reset(): void {
-		this._count = 0;
-	}
-
-	get count(): number {
-		return this._count;
-	}
-
-	set count(value: number) {
-		this._count = value;
-	}
-}
-
-```
-
-</ngs-code-block-with-header>
-
+<a href="https://github.com/ertunga/ng-snippets/blob/master/projects/ng-snippets/counter/counter.service.ts" target="_blank">Source</a>

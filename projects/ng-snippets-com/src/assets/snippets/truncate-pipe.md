@@ -28,23 +28,4 @@ Short text
 
 ## Source
 
-<ngs-code-block-with-header file-name="truncate.pipe.ts">
-
-```typescript
-import { Pipe, PipeTransform } from '@angular/core';
-
-@Pipe({
-    name: 'truncate'
-})
-export class TruncatePipe implements PipeTransform {
-    transform(value: string, truncationLength: number, suffix: string = '...'): string {
-        if (truncationLength <= 0) {
-            throw new Error('Truncation length must be larger than 0');
-        }
-
-        return value.length > truncationLength ? value.substring(0, truncationLength) + suffix : value;
-    }
-}
-```
-
-</ngs-code-block-with-header>
+<a href="https://github.com/ertunga/ng-snippets/blob/master/projects/ng-snippets/truncate/truncate.pipe.ts" target="_blank">Source</a>
