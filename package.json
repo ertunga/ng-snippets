@@ -15,6 +15,7 @@
         "prettier:write": "prettier --write '*.{html,scss,ts,js,json}'",
         "format": "npm run prettier:write && npm run lint:fix",
         "explore-bundle": "ng build --source-map --named-chunks && source-map-explorer dist/ng-snippets-com/*.js",
+        "explore-bundle:demo": "ng build --project ng-snippets-demo --source-map --named-chunks && source-map-explorer dist/ng-snippets-demo/*.js",
         "deploy": "ng build && firebase deploy",
         "publish:lib": "npm run build:lib && cd dist/ng-snippets && npm publish",
         "semantic-release": "semantic-release",
