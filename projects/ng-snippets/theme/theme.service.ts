@@ -9,22 +9,15 @@ import { ThemeConfig } from './theme.model';
 export class ThemeService {
     private activeThemeSubject = new BehaviorSubject<string | undefined>(undefined);
     activeTheme$ = this.activeThemeSubject.asObservable();
-    themeNames: string[] = [];
-    themeValues: string[] = [];
 
-    constructor(@Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {
-        this.themeConfig.themes.forEach((theme) => {
-            this.themeNames.push(theme.name);
-            this.themeValues.push(theme.value);
-        });
-    }
+    constructor(@Inject(THEME_CONFIG) private themeConfig: ThemeConfig) {}
 
     get activeTheme(): string | undefined {
         return this.activeThemeSubject.getValue();
     }
 
-    set(theme: string): void {
-        if (theme === this.activeTheme) {
+    set(themeName: string): void {
+        if (themeName === this.activeTheme) {
             return;
         }
 
@@ -33,7 +26,7 @@ export class ThemeService {
             return;
         }
 
-        const selectedTheme = this.themeConfig.themes.find((registeredTheme) => registeredTheme.name === theme);
+        const selectedTheme = this.themeConfig.themes.find((registeredTheme) => registeredTheme.name === themeName);
         if (!selectedTheme) {
             return;
         }
@@ -46,5 +39,13 @@ export class ThemeService {
         } else {
             element.setAttribute(this.themeConfig.attribute, selectedTheme.value);
         }
+    }
+
+    get themeNames(): string[] {
+        return this.themeConfig.themes.map((theme) => theme.name);
+    }
+
+    get themeValues(): string[] {
+        return this.themeConfig.themes.map((theme) => theme.value);
     }
 }

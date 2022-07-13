@@ -56,10 +56,12 @@
     <section>
         <h2>Theme Service</h2>
 
-        <p>Current theme: {{ themeService.activeTheme$ | async }}</p>
+        <p>Active theme: {{ themeService.activeTheme$ | async }} - {{ themeService.activeTheme }}</p>
+        <p>Theme names: {{ themeService.themeNames | join }}</p>
+        <p>Theme values: {{ themeService.themeValues | join }}</p>
 
-        <button *ngFor="let theme of themeService.themeNames" (click)="themeService.set(theme)">
-            {{ theme | titlecase }}
+        <button *ngFor="let themeName of themeService.themeNames" (click)="themeService.set(themeName)">
+            {{ themeName | titlecase }}
         </button>
         <button (click)="systemPreference = true">System Preference</button>
     </section>
