@@ -63,7 +63,7 @@ component's template.
 <ngs-code-block-with-header>
 
 ```html
-<p>Current theme: {{ themeService.activeTheme$ | async }}</p>
+<p>Current theme: {{ themeService.activeTheme }}</p>
 
 <button (click)="themeService.set('light')">Light</button>
 <button (click)="themeService.set('dark')">Dark</button>
