@@ -2,7 +2,6 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { snippets } from './data/snippets';
 import { ThemeService } from '../../../ng-snippets/theme';
-
 @Component({
     selector: 'ngs-root',
     templateUrl: './app.component.html',

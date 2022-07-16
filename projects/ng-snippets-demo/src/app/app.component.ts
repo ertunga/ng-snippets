@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CounterService } from '../../../ng-snippets/counter';
-import { ThemeService } from '../../../ng-snippets/theme';
+import { ThemeService } from '../../../ng-snippets/src/lib/theme';
 import { Theme } from './theme';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
