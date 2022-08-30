@@ -11,7 +11,7 @@ describe('JoinPipe', () => {
             expected: 'test1-test2-test3'
         },
         { expectation: 'join number array', array: [1, -4, 100, 0], expected: '1, -4, 100, 0' },
-        { expectation: 'join number array with - separator', array: [1, -4, 100, 0], separator: '-', expected: '1--4-100-0' },
+        { expectation: 'join number array with / separator', array: [1, -4, 100, 0], separator: '/', expected: '1/-4/100/0' },
         { expectation: 'join empty array', array: [], expected: '' },
         { expectation: 'join empty array with - separator', array: [], separator: '-', expected: '' }
     ];
