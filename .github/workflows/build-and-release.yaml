@@ -24,7 +24,7 @@ jobs:
               run: npm run build:lib
 
             - name: Run tests
-              run: npm run test:ci
+              run: npm run test:lib-headless
 
             - name: Semantic release
               run: npm run semantic-release

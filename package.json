@@ -9,7 +9,7 @@
         "build": "ng build --project ng-snippets-com",
         "build:lib": "ng build --project ng-snippets",
         "test:lib": "ng test --project ng-snippets",
-        "test:ci": "ng test --project ng-snippets --no-watch --no-progress --browsers=ChromeHeadlessCI",
+        "test:lib-headless": "ng test --project ng-snippets --no-watch --no-progress --browsers=ChromeHeadlessCI",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "prettier:check": "prettier --check '*.{html,scss,ts,js,json}'",
