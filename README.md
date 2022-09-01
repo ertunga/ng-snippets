@@ -22,6 +22,12 @@ A collection of essential Angular services, directives, pipes and other tools to
 npm i ng-snippets
 ```
 
+or
+
+```bash
+yarn add ng-snippets
+```
+
 ## 📕 Docs
 
 <a href="https://ngsnippets.com"><strong>ngsnippets.com</strong></a>
