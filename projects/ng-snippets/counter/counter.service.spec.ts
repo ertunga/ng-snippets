@@ -36,11 +36,11 @@ describe('CounterService', () => {
         expect(service.count).toBe(0);
     });
 
-    it('should returns count', () => {
+    it('should return count', () => {
         expect(service.count).toBe(0);
     });
 
-    it('should sets count', () => {
+    it('should set count', () => {
         service.count = 100;
         expect(service.count).toBe(100);
     });
