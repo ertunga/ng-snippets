@@ -3,7 +3,7 @@ name: build and release ng-snippets library
 on:
     push:
         branches:
-            - 'master'
+            - master
 jobs:
     build-and-semantic-release:
         runs-on: ubuntu-latest
