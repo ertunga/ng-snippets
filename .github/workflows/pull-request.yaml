@@ -1,4 +1,4 @@
-name: build and test ng-snippets library
+name: Pull request - Build and test ng-snippets library
 
 on:
     pull_request:
