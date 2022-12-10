@@ -14,7 +14,7 @@ jobs:
             - name: Set up your GitHub Actions workflow with a specific version of NodeJS
               uses: actions/setup-node@v3
               with:
-                  node-version: 14
+                  node-version: 16
                   cache: npm
 
             - name: Install dependencies
