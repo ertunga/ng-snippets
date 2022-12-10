@@ -1,4 +1,4 @@
-name: build and release ng-snippets library
+name: Release - Build and release ng-snippets library
 
 on:
     push:
